@@ -18,13 +18,13 @@ export declare class Organization extends pulumi.CustomResource {
      */
     static isInstance(obj: any): obj is Organization;
     /**
-     * Id of the organization
-     */
-    readonly id: pulumi.Output<string>;
-    /**
      * Name of the organization created
      */
     readonly name: pulumi.Output<string>;
+    /**
+     * Id of the organization
+     */
+    readonly org_id: pulumi.Output<string>;
     /**
      * Slug of the organization
      */
@@ -36,7 +36,7 @@ export declare class Organization extends pulumi.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param opts A bag of options that control this resource's behavior.
      */
-    constructor(name: string, args: OrganizationArgs, opts?: pulumi.CustomResourceOptions);
+    constructor(name: string, args?: OrganizationArgs, opts?: pulumi.CustomResourceOptions);
 }
 /**
  * The set of arguments for constructing a Organization resource.
@@ -45,5 +45,5 @@ export interface OrganizationArgs {
     /**
      * Name of the organization to create
      */
-    name: pulumi.Input<string>;
+    name?: pulumi.Input<string>;
 }

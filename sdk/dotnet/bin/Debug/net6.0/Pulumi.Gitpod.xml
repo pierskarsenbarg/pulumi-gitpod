@@ -1,0 +1,101 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Pulumi.Gitpod</name>
+    </assembly>
+    <members>
+        <member name="P:Pulumi.Gitpod.Config.AccessToken">
+            <summary>
+            Your Gitpod access token
+            </summary>
+        </member>
+        <member name="M:Pulumi.Gitpod.GetOrganization.InvokeAsync(Pulumi.Gitpod.GetOrganizationArgs,Pulumi.InvokeOptions)">
+            <summary>
+            GetOrganization gets the Organization information
+            </summary>
+        </member>
+        <member name="M:Pulumi.Gitpod.GetOrganization.Invoke(Pulumi.InvokeOptions)">
+            <summary>
+            GetOrganization gets the Organization information
+            </summary>
+        </member>
+        <member name="F:Pulumi.Gitpod.GetOrganizationResult.Name">
+            <summary>
+            Name of the organization created
+            </summary>
+        </member>
+        <member name="F:Pulumi.Gitpod.GetOrganizationResult.Org_id">
+            <summary>
+            Id of the organization
+            </summary>
+        </member>
+        <member name="F:Pulumi.Gitpod.GetOrganizationResult.Slug">
+            <summary>
+            Slug of the organization
+            </summary>
+        </member>
+        <member name="T:Pulumi.Gitpod.Organization">
+            <summary>
+            A Gitpod Organization
+            </summary>
+        </member>
+        <member name="P:Pulumi.Gitpod.Organization.Name">
+            <summary>
+            Name of the organization created
+            </summary>
+        </member>
+        <member name="P:Pulumi.Gitpod.Organization.Org_id">
+            <summary>
+            Id of the organization
+            </summary>
+        </member>
+        <member name="P:Pulumi.Gitpod.Organization.Slug">
+            <summary>
+            Slug of the organization
+            </summary>
+        </member>
+        <member name="M:Pulumi.Gitpod.Organization.#ctor(System.String,Pulumi.Gitpod.OrganizationArgs,Pulumi.CustomResourceOptions)">
+             <summary>
+             Create a Organization resource with the given unique name, arguments, and options.
+             </summary>
+            
+             <param name="name">The unique name of the resource</param>
+             <param name="args">The arguments used to populate this resource's properties</param>
+             <param name="options">A bag of options that control this resource's behavior</param>
+        </member>
+        <member name="M:Pulumi.Gitpod.Organization.Get(System.String,Pulumi.Input{System.String},Pulumi.CustomResourceOptions)">
+             <summary>
+             Get an existing Organization resource's state with the given name, ID, and optional extra
+             properties used to qualify the lookup.
+             </summary>
+            
+             <param name="name">The unique name of the resulting resource.</param>
+             <param name="id">The unique provider ID of the resource to lookup.</param>
+             <param name="options">A bag of options that control this resource's behavior</param>
+        </member>
+        <member name="P:Pulumi.Gitpod.OrganizationArgs.Name">
+            <summary>
+            Name of the organization to create
+            </summary>
+        </member>
+        <member name="P:Pulumi.Gitpod.Provider.AccessToken">
+            <summary>
+            Your Gitpod access token
+            </summary>
+        </member>
+        <member name="M:Pulumi.Gitpod.Provider.#ctor(System.String,Pulumi.Gitpod.ProviderArgs,Pulumi.CustomResourceOptions)">
+             <summary>
+             Create a Provider resource with the given unique name, arguments, and options.
+             </summary>
+            
+             <param name="name">The unique name of the resource</param>
+             <param name="args">The arguments used to populate this resource's properties</param>
+             <param name="options">A bag of options that control this resource's behavior</param>
+        </member>
+        <member name="P:Pulumi.Gitpod.ProviderArgs.AccessToken">
+            <summary>
+            Your Gitpod access token
+            </summary>
+        </member>
+    </members>
+</doc>

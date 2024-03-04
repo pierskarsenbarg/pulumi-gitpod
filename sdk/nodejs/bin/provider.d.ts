@@ -8,7 +8,7 @@ export declare class Provider extends pulumi.ProviderResource {
     /**
      * Your Gitpod access token
      */
-    readonly accessToken: pulumi.Output<string>;
+    readonly accessToken: pulumi.Output<string | undefined>;
     /**
      * Create a Provider resource with the given unique name, arguments, and options.
      *
@@ -16,7 +16,7 @@ export declare class Provider extends pulumi.ProviderResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param opts A bag of options that control this resource's behavior.
      */
-    constructor(name: string, args: ProviderArgs, opts?: pulumi.ResourceOptions);
+    constructor(name: string, args?: ProviderArgs, opts?: pulumi.ResourceOptions);
 }
 /**
  * The set of arguments for constructing a Provider resource.
@@ -25,5 +25,5 @@ export interface ProviderArgs {
     /**
      * Your Gitpod access token
      */
-    accessToken: pulumi.Input<string>;
+    accessToken?: pulumi.Input<string>;
 }

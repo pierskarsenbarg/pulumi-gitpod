@@ -22,7 +22,7 @@ export class Provider extends pulumi.ProviderResource {
     /**
      * Your Gitpod access token
      */
-    public readonly accessToken!: pulumi.Output<string>;
+    public readonly accessToken!: pulumi.Output<string | undefined>;
 
     /**
      * Create a Provider resource with the given unique name, arguments, and options.
@@ -31,13 +31,10 @@ export class Provider extends pulumi.ProviderResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param opts A bag of options that control this resource's behavior.
      */
-    constructor(name: string, args: ProviderArgs, opts?: pulumi.ResourceOptions) {
+    constructor(name: string, args?: ProviderArgs, opts?: pulumi.ResourceOptions) {
         let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         {
-            if ((!args || args.accessToken === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'accessToken'");
-            }
             resourceInputs["accessToken"] = args?.accessToken ? pulumi.secret(args.accessToken) : undefined;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
@@ -54,5 +51,5 @@ export interface ProviderArgs {
     /**
      * Your Gitpod access token
      */
-    accessToken: pulumi.Input<string>;
+    accessToken?: pulumi.Input<string>;
 }

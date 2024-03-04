@@ -35,13 +35,13 @@ export class Organization extends pulumi.CustomResource {
     }
 
     /**
-     * Id of the organization
-     */
-    public /*out*/ readonly id!: pulumi.Output<string>;
-    /**
      * Name of the organization created
      */
     public readonly name!: pulumi.Output<string>;
+    /**
+     * Id of the organization
+     */
+    public /*out*/ readonly org_id!: pulumi.Output<string>;
     /**
      * Slug of the organization
      */
@@ -54,19 +54,16 @@ export class Organization extends pulumi.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param opts A bag of options that control this resource's behavior.
      */
-    constructor(name: string, args: OrganizationArgs, opts?: pulumi.CustomResourceOptions) {
+    constructor(name: string, args?: OrganizationArgs, opts?: pulumi.CustomResourceOptions) {
         let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         if (!opts.id) {
-            if ((!args || args.name === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'name'");
-            }
             resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["id"] = undefined /*out*/;
+            resourceInputs["org_id"] = undefined /*out*/;
             resourceInputs["slug"] = undefined /*out*/;
         } else {
-            resourceInputs["id"] = undefined /*out*/;
             resourceInputs["name"] = undefined /*out*/;
+            resourceInputs["org_id"] = undefined /*out*/;
             resourceInputs["slug"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
@@ -81,5 +78,5 @@ export interface OrganizationArgs {
     /**
      * Name of the organization to create
      */
-    name: pulumi.Input<string>;
+    name?: pulumi.Input<string>;
 }

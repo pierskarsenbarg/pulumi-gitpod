@@ -1,6 +1,6 @@
 {
     "name": "@pulumi/gitpod",
-    "version": "v0.0.1-alpha.1709131047+55f5ea96.dirty",
+    "version": "${VERSION}",
     "scripts": {
         "build": "tsc"
     },

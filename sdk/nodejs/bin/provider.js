@@ -27,9 +27,6 @@ class Provider extends pulumi.ProviderResource {
         let resourceInputs = {};
         opts = opts || {};
         {
-            if ((!args || args.accessToken === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'accessToken'");
-            }
             resourceInputs["accessToken"] = (args === null || args === void 0 ? void 0 : args.accessToken) ? pulumi.secret(args.accessToken) : undefined;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);

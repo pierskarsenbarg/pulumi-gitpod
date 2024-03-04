@@ -15,6 +15,7 @@
     "files": [
         "config/index.ts",
         "config/vars.ts",
+        "getOrganization.ts",
         "index.ts",
         "organization.ts",
         "provider.ts",

@@ -1,0 +1,15 @@
+/Users/pierskarsenbarg/go/src/github.com/pierskarsenbarg/pulumi-gitpod/sdk/dotnet/bin/Debug/net6.0/Pulumi.Gitpod.deps.json
+/Users/pierskarsenbarg/go/src/github.com/pierskarsenbarg/pulumi-gitpod/sdk/dotnet/bin/Debug/net6.0/Pulumi.Gitpod.dll
+/Users/pierskarsenbarg/go/src/github.com/pierskarsenbarg/pulumi-gitpod/sdk/dotnet/bin/Debug/net6.0/Pulumi.Gitpod.pdb
+/Users/pierskarsenbarg/go/src/github.com/pierskarsenbarg/pulumi-gitpod/sdk/dotnet/bin/Debug/net6.0/Pulumi.Gitpod.xml
+/Users/pierskarsenbarg/go/src/github.com/pierskarsenbarg/pulumi-gitpod/sdk/dotnet/obj/Debug/net6.0/Pulumi.Gitpod.csproj.AssemblyReference.cache
+/Users/pierskarsenbarg/go/src/github.com/pierskarsenbarg/pulumi-gitpod/sdk/dotnet/obj/Debug/net6.0/Pulumi.Gitpod.GeneratedMSBuildEditorConfig.editorconfig
+/Users/pierskarsenbarg/go/src/github.com/pierskarsenbarg/pulumi-gitpod/sdk/dotnet/obj/Debug/net6.0/Pulumi.Gitpod.AssemblyInfoInputs.cache
+/Users/pierskarsenbarg/go/src/github.com/pierskarsenbarg/pulumi-gitpod/sdk/dotnet/obj/Debug/net6.0/Pulumi.Gitpod.AssemblyInfo.cs
+/Users/pierskarsenbarg/go/src/github.com/pierskarsenbarg/pulumi-gitpod/sdk/dotnet/obj/Debug/net6.0/Pulumi.Gitpod.csproj.CoreCompileInputs.cache
+/Users/pierskarsenbarg/go/src/github.com/pierskarsenbarg/pulumi-gitpod/sdk/dotnet/obj/Debug/net6.0/Pulumi.Gitpod.sourcelink.json
+/Users/pierskarsenbarg/go/src/github.com/pierskarsenbarg/pulumi-gitpod/sdk/dotnet/obj/Debug/net6.0/Pulumi.Gitpod.dll
+/Users/pierskarsenbarg/go/src/github.com/pierskarsenbarg/pulumi-gitpod/sdk/dotnet/obj/Debug/net6.0/refint/Pulumi.Gitpod.dll
+/Users/pierskarsenbarg/go/src/github.com/pierskarsenbarg/pulumi-gitpod/sdk/dotnet/obj/Debug/net6.0/Pulumi.Gitpod.xml
+/Users/pierskarsenbarg/go/src/github.com/pierskarsenbarg/pulumi-gitpod/sdk/dotnet/obj/Debug/net6.0/Pulumi.Gitpod.pdb
+/Users/pierskarsenbarg/go/src/github.com/pierskarsenbarg/pulumi-gitpod/sdk/dotnet/obj/Debug/net6.0/ref/Pulumi.Gitpod.dll
