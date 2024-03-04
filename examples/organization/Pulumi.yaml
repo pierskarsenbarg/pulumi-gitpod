@@ -1,0 +1,20 @@
+name: gitpod-organization
+runtime: yaml
+
+plugins:
+  providers:
+    - name: gitpod
+      path: ../../bin
+
+resources:
+  provider:
+    type: pulumi:providers:gitpod
+    properties:
+      accessToken: "gitpod_pat_oEu1uXlLfoRTYyGFdkEcrQSpZhePsO5vH2lROp4BsRw.rgixkWCuVWEbqacP43dFvbXtrKWdqCMSQ6r776Mn"
+  my-org:
+    type: gitpod:Organization
+    properties:
+      name: pk-test-org2
+    options:
+      provider: ${provider}
+        

@@ -1,0 +1,34 @@
+version: '3'
+
+vars:
+  VERSION: 
+    sh: pulumictl get version
+  VERSION_PATH: main.Version
+  PROVIDER_NAME: gitpod
+  PROVIDER: pulumi-resource-{{.PROVIDER_NAME}}
+  PROJECT: github.com/pierskarsenbarg/pulumi-gitpod
+
+tasks:
+  clean:
+    cmds:
+      - rm -rf ./bin
+  ensure:
+    cmds:
+      - go mod tidy
+      - cd sdk && go mod tidy
+      # - cd tests && go mod tidy
+  build_provider:
+    cmds:
+      - go build -o bin/{{.PROVIDER}} -ldflags "-X {{.PROJECT}}/{{.VERSION_PATH}}={{.VERSION}}"
+  get_schema:
+    deps: [build_provider]
+    cmds:
+      - rm schema.json
+      - pulumi package get-schema ./bin/{{.PROVIDER}} >> schema.json
+  watch:
+    watch: true
+    sources:
+      - '**/*.go'
+    cmds:
+      - go mod tidy
+      - task: build_provider
