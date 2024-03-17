@@ -3,10 +3,24 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 Object.defineProperty(exports, "__esModule", { value: true });
 const pulumi = require("@pulumi/pulumi");
+const utilities = require("../utilities");
 const __config = new pulumi.Config("gitpod");
 Object.defineProperty(exports, "accessToken", {
     get() {
-        return __config.get("accessToken");
+        var _a;
+        return (_a = __config.get("accessToken")) !== null && _a !== void 0 ? _a : (utilities.getEnv("GITPOD_ACCESSTOKEN") || "");
+    },
+    enumerable: true,
+});
+Object.defineProperty(exports, "organizationId", {
+    get() {
+        return __config.get("organizationId");
+    },
+    enumerable: true,
+});
+Object.defineProperty(exports, "ownerId", {
+    get() {
+        return __config.get("ownerId");
     },
     enumerable: true,
 });

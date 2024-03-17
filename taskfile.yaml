@@ -6,7 +6,7 @@ vars:
   VERSION_PATH: main.Version
   PROVIDER_NAME: gitpod
   PROVIDER: pulumi-resource-{{.PROVIDER_NAME}}
-  PROJECT: github.com/pierskarsenbarg/pulumi-gitpod
+  PROJECT: github.com/pierskarsenbarg/pulumi-{{.PROVIDER_NAME}}
   SDK_DIR: sdk
 
 tasks:
@@ -20,11 +20,12 @@ tasks:
       # - cd tests && go mod tidy
   build_provider:
     cmds:
+      - go mod tidy
       - go build -o bin/{{.PROVIDER}} -ldflags "-X {{.PROJECT}}/{{.VERSION_PATH}}={{.VERSION}}"
   get_schema:
     deps: [build_provider]
     cmds:
-      - rm schema.json
+      - rm -f schema.json
       - pulumi package get-schema ./bin/{{.PROVIDER}} >> schema.json
   dotnet_sdk:
     cmds: 
@@ -68,7 +69,8 @@ tasks:
           rm ./bin/setup.py.bak && \
           cd ./bin && python3 setup.py build sdist
     vars:
-      PYTHON_VERSION: pulumictl get version --language python
+      PYTHON_VERSION: 
+        sh: pulumictl get version --language python
   build_sdks:
     deps: [build_provider]
     cmds:
@@ -80,7 +82,7 @@ tasks:
     watch: true
     sources:
       - '**/*.go'
+    interval: 500ms
     cmds:
-      - 
       - go mod tidy
       - task: build_provider

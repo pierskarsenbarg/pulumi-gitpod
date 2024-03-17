@@ -7,8 +7,9 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pierskarsenbarg/pulumi-gitpod/sdk/go/gitpod/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"internal"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // GetOrganization gets the Organization information
@@ -36,24 +37,22 @@ type LookupOrganizationResult struct {
 }
 
 func LookupOrganizationOutput(ctx *pulumi.Context, args LookupOrganizationOutputArgs, opts ...pulumi.InvokeOption) LookupOrganizationResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupOrganizationResult, error) {
-			args := v.(LookupOrganizationArgs)
-			r, err := LookupOrganization(ctx, &args, opts...)
-			var s LookupOrganizationResult
-			if r != nil {
-				s = *r
-			}
-			return s, err
-		}).(LookupOrganizationResultOutput)
+	outputResult := pulumix.ApplyErr[*LookupOrganizationArgs](args.ToOutput(), func(plainArgs *LookupOrganizationArgs) (*LookupOrganizationResult, error) {
+		return LookupOrganization(ctx, plainArgs, opts...)
+	})
+
+	return pulumix.Cast[LookupOrganizationResultOutput, *LookupOrganizationResult](outputResult)
 }
 
 // Id of the organization
 type LookupOrganizationOutputArgs struct {
 }
 
-func (LookupOrganizationOutputArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*LookupOrganizationArgs)(nil)).Elem()
+func (args LookupOrganizationOutputArgs) ToOutput() pulumix.Output[*LookupOrganizationArgs] {
+	allArgs := pulumix.All()
+	return pulumix.Apply[[]any](allArgs, func(resolvedArgs []interface{}) *LookupOrganizationArgs {
+		return &LookupOrganizationArgs{}
+	})
 }
 
 type LookupOrganizationResultOutput struct{ *pulumi.OutputState }
@@ -62,29 +61,20 @@ func (LookupOrganizationResultOutput) ElementType() reflect.Type {
 	return reflect.TypeOf((*LookupOrganizationResult)(nil)).Elem()
 }
 
-func (o LookupOrganizationResultOutput) ToLookupOrganizationResultOutput() LookupOrganizationResultOutput {
-	return o
+func (o LookupOrganizationResultOutput) ToOutput(context.Context) pulumix.Output[*LookupOrganizationResult] {
+	return pulumix.Output[*LookupOrganizationResult]{
+		OutputState: o.OutputState,
+	}
 }
 
-func (o LookupOrganizationResultOutput) ToLookupOrganizationResultOutputWithContext(ctx context.Context) LookupOrganizationResultOutput {
-	return o
+func (o LookupOrganizationResultOutput) Name() pulumix.Output[string] {
+	return pulumix.Apply[*LookupOrganizationResult](o, func(v *LookupOrganizationResult) string { return v.Name })
 }
 
-// Name of the organization created
-func (o LookupOrganizationResultOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupOrganizationResult) string { return v.Name }).(pulumi.StringOutput)
+func (o LookupOrganizationResultOutput) Org_id() pulumix.Output[string] {
+	return pulumix.Apply[*LookupOrganizationResult](o, func(v *LookupOrganizationResult) string { return v.Org_id })
 }
 
-// Id of the organization
-func (o LookupOrganizationResultOutput) Org_id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupOrganizationResult) string { return v.Org_id }).(pulumi.StringOutput)
-}
-
-// Slug of the organization
-func (o LookupOrganizationResultOutput) Slug() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupOrganizationResult) string { return v.Slug }).(pulumi.StringOutput)
-}
-
-func init() {
-	pulumi.RegisterOutputType(LookupOrganizationResultOutput{})
+func (o LookupOrganizationResultOutput) Slug() pulumix.Output[string] {
+	return pulumix.Apply[*LookupOrganizationResult](o, func(v *LookupOrganizationResult) string { return v.Slug })
 }

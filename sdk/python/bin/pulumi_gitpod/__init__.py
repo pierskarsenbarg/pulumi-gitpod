@@ -5,9 +5,13 @@
 from . import _utilities
 import typing
 # Export this package's modules as members:
+from ._enums import *
 from .get_organization import *
 from .organization import *
 from .provider import *
+from .workspace import *
+from ._inputs import *
+from . import outputs
 
 # Make subpackages available:
 if typing.TYPE_CHECKING:
@@ -24,7 +28,8 @@ _utilities.register(
   "mod": "index",
   "fqn": "pulumi_gitpod",
   "classes": {
-   "gitpod:index:Organization": "Organization"
+   "gitpod:index:Organization": "Organization",
+   "gitpod:index:Workspace": "Workspace"
   }
  }
 ]

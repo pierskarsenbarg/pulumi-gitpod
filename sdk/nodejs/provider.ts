@@ -23,6 +23,11 @@ export class Provider extends pulumi.ProviderResource {
      * Your Gitpod access token
      */
     public readonly accessToken!: pulumi.Output<string | undefined>;
+    public readonly organizationId!: pulumi.Output<string | undefined>;
+    /**
+     * Id of owner account
+     */
+    public readonly ownerId!: pulumi.Output<string | undefined>;
 
     /**
      * Create a Provider resource with the given unique name, arguments, and options.
@@ -35,7 +40,9 @@ export class Provider extends pulumi.ProviderResource {
         let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         {
-            resourceInputs["accessToken"] = args?.accessToken ? pulumi.secret(args.accessToken) : undefined;
+            resourceInputs["accessToken"] = (args?.accessToken ? pulumi.secret(args.accessToken) : undefined) ?? (utilities.getEnv("GITPOD_ACCESSTOKEN") || "");
+            resourceInputs["organizationId"] = args ? args.organizationId : undefined;
+            resourceInputs["ownerId"] = args ? args.ownerId : undefined;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         const secretOpts = { additionalSecretOutputs: ["accessToken"] };
@@ -52,4 +59,9 @@ export interface ProviderArgs {
      * Your Gitpod access token
      */
     accessToken?: pulumi.Input<string>;
+    organizationId?: pulumi.Input<string>;
+    /**
+     * Id of owner account
+     */
+    ownerId?: pulumi.Input<string>;
 }

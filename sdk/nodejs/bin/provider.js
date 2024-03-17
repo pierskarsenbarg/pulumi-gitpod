@@ -24,10 +24,13 @@ class Provider extends pulumi.ProviderResource {
      * @param opts A bag of options that control this resource's behavior.
      */
     constructor(name, args, opts) {
+        var _a;
         let resourceInputs = {};
         opts = opts || {};
         {
-            resourceInputs["accessToken"] = (args === null || args === void 0 ? void 0 : args.accessToken) ? pulumi.secret(args.accessToken) : undefined;
+            resourceInputs["accessToken"] = (_a = ((args === null || args === void 0 ? void 0 : args.accessToken) ? pulumi.secret(args.accessToken) : undefined)) !== null && _a !== void 0 ? _a : (utilities.getEnv("GITPOD_ACCESSTOKEN") || "");
+            resourceInputs["organizationId"] = args ? args.organizationId : undefined;
+            resourceInputs["ownerId"] = args ? args.ownerId : undefined;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         const secretOpts = { additionalSecretOutputs: ["accessToken"] };

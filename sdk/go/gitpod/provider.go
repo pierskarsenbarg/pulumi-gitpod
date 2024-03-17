@@ -7,15 +7,19 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pierskarsenbarg/pulumi-gitpod/sdk/go/gitpod/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"internal"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 type Provider struct {
 	pulumi.ProviderResourceState
 
 	// Your Gitpod access token
-	AccessToken pulumi.StringPtrOutput `pulumi:"accessToken"`
+	AccessToken    pulumix.Output[*string] `pulumi:"accessToken"`
+	OrganizationId pulumix.Output[*string] `pulumi:"organizationId"`
+	// Id of owner account
+	OwnerId pulumix.Output[*string] `pulumi:"ownerId"`
 }
 
 // NewProvider registers a new resource with the given unique name, arguments, and options.
@@ -25,8 +29,14 @@ func NewProvider(ctx *pulumi.Context,
 		args = &ProviderArgs{}
 	}
 
+	if args.AccessToken == nil {
+		if d := internal.GetEnvOrDefault("", nil, "GITPOD_ACCESSTOKEN"); d != nil {
+			args.AccessToken = pulumix.Ptr(d.(string))
+		}
+	}
 	if args.AccessToken != nil {
-		args.AccessToken = pulumi.ToSecret(args.AccessToken).(pulumi.StringPtrInput)
+		untypedSecretValue := pulumi.ToSecret(args.AccessToken.ToOutput(ctx.Context()).Untyped())
+		args.AccessToken = pulumix.MustConvertTyped[*string](untypedSecretValue)
 	}
 	secrets := pulumi.AdditionalSecretOutputs([]string{
 		"accessToken",
@@ -43,42 +53,29 @@ func NewProvider(ctx *pulumi.Context,
 
 type providerArgs struct {
 	// Your Gitpod access token
-	AccessToken *string `pulumi:"accessToken"`
+	AccessToken    *string `pulumi:"accessToken"`
+	OrganizationId *string `pulumi:"organizationId"`
+	// Id of owner account
+	OwnerId *string `pulumi:"ownerId"`
 }
 
 // The set of arguments for constructing a Provider resource.
 type ProviderArgs struct {
 	// Your Gitpod access token
-	AccessToken pulumi.StringPtrInput
+	AccessToken    pulumix.Input[*string]
+	OrganizationId pulumix.Input[*string]
+	// Id of owner account
+	OwnerId pulumix.Input[*string]
 }
 
 func (ProviderArgs) ElementType() reflect.Type {
 	return reflect.TypeOf((*providerArgs)(nil)).Elem()
 }
 
-type ProviderInput interface {
-	pulumi.Input
-
-	ToProviderOutput() ProviderOutput
-	ToProviderOutputWithContext(ctx context.Context) ProviderOutput
-}
-
-func (*Provider) ElementType() reflect.Type {
-	return reflect.TypeOf((**Provider)(nil)).Elem()
-}
-
-func (i *Provider) ToProviderOutput() ProviderOutput {
-	return i.ToProviderOutputWithContext(context.Background())
-}
-
-func (i *Provider) ToProviderOutputWithContext(ctx context.Context) ProviderOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ProviderOutput)
-}
-
 type ProviderOutput struct{ *pulumi.OutputState }
 
 func (ProviderOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((**Provider)(nil)).Elem()
+	return reflect.TypeOf((*Provider)(nil)).Elem()
 }
 
 func (o ProviderOutput) ToProviderOutput() ProviderOutput {
@@ -89,12 +86,29 @@ func (o ProviderOutput) ToProviderOutputWithContext(ctx context.Context) Provide
 	return o
 }
 
+func (o ProviderOutput) ToOutput(ctx context.Context) pulumix.Output[Provider] {
+	return pulumix.Output[Provider]{
+		OutputState: o.OutputState,
+	}
+}
+
 // Your Gitpod access token
-func (o ProviderOutput) AccessToken() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *Provider) pulumi.StringPtrOutput { return v.AccessToken }).(pulumi.StringPtrOutput)
+func (o ProviderOutput) AccessToken() pulumix.Output[*string] {
+	value := pulumix.Apply[Provider](o, func(v Provider) pulumix.Output[*string] { return v.AccessToken })
+	return pulumix.Flatten[*string, pulumix.Output[*string]](value)
+}
+
+func (o ProviderOutput) OrganizationId() pulumix.Output[*string] {
+	value := pulumix.Apply[Provider](o, func(v Provider) pulumix.Output[*string] { return v.OrganizationId })
+	return pulumix.Flatten[*string, pulumix.Output[*string]](value)
+}
+
+// Id of owner account
+func (o ProviderOutput) OwnerId() pulumix.Output[*string] {
+	value := pulumix.Apply[Provider](o, func(v Provider) pulumix.Output[*string] { return v.OwnerId })
+	return pulumix.Flatten[*string, pulumix.Output[*string]](value)
 }
 
 func init() {
-	pulumi.RegisterInputType(reflect.TypeOf((*ProviderInput)(nil)).Elem(), &Provider{})
 	pulumi.RegisterOutputType(ProviderOutput{})
 }

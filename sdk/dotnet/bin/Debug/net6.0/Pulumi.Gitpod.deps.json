@@ -6,7 +6,7 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v6.0": {
-      "Pulumi.Gitpod/0.0.1-alpha.1709587582+63c6da2f.dirty": {
+      "Pulumi.Gitpod/0.0.1-alpha.1709591095+02b5122f.dirty": {
         "dependencies": {
           "Microsoft.SourceLink.GitHub": "1.0.0",
           "Pulumi": "3.54.1"
@@ -179,7 +179,7 @@
     }
   },
   "libraries": {
-    "Pulumi.Gitpod/0.0.1-alpha.1709587582+63c6da2f.dirty": {
+    "Pulumi.Gitpod/0.0.1-alpha.1709591095+02b5122f.dirty": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

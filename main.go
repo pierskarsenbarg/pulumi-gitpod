@@ -2,13 +2,13 @@ package main
 
 import (
 	"fmt"
-	"net/http"
 	"os"
-	"time"
 
-	gitpodapi "github.com/pierskarsenbarg/pulumi-gitpod/internal"
+	"github.com/pierskarsenbarg/pulumi-gitpod/pkg"
 	p "github.com/pulumi/pulumi-go-provider"
 	"github.com/pulumi/pulumi-go-provider/infer"
+	"github.com/pulumi/pulumi-go-provider/middleware/schema"
+	gen "github.com/pulumi/pulumi/pkg/v3/codegen/go"
 	"github.com/pulumi/pulumi/sdk/v3/go/common/tokens"
 )
 
@@ -24,44 +24,26 @@ func main() {
 
 func provider() p.Provider {
 	return infer.Provider(infer.Options{
-		Resources: []infer.InferredResource{infer.Resource[*Organization, OrganizationArgs, OrganizationState]()},
+		Metadata: schema.Metadata{
+			DisplayName: "gitpod",
+			Description: "Gitpod provider",
+			LanguageMap: map[string]any{
+				"go": gen.GoPackageInfo{
+					Generics:       gen.GenericsSettingGenericsOnly,
+					ImportBasePath: "github.com/pierskarsenbarg/pulumi-gitpod/sdk/go/gitpod",
+				},
+			},
+		},
+		Resources: []infer.InferredResource{
+			infer.Resource[*pkg.Organization, pkg.OrganizationArgs, pkg.OrganizationState](),
+			infer.Resource[*pkg.Workspace, pkg.WorkspaceArgs, pkg.WorkspaceState](),
+		},
 		ModuleMap: map[tokens.ModuleName]tokens.ModuleName{
-			"gitpod": "index",
+			"pkg": "index",
 		},
 		Functions: []infer.InferredFunction{
-			infer.Function[*GetOrganization, GetOrganizationArgs, OrganizationState](),
+			infer.Function[*pkg.GetOrganization, pkg.GetOrganizationArgs, pkg.OrganizationState](),
 		},
-		Config: infer.Config[*Config](),
+		Config: infer.Config[*pkg.Config](),
 	})
-}
-
-type Config struct {
-	AccessToken string `pulumi:"accessToken,optional" provider:"secret"`
-	client      gitpodapi.Client
-}
-
-var _ = (infer.Annotated)((*Config)(nil))
-
-func (c *Config) Annotate(a infer.Annotator) {
-	a.Describe(&c.AccessToken, "Your Gitpod access token")
-	// a.SetDefault(&c.AccessToken, "", "GITPOD_ACCESSTOKEN")
-}
-
-var _ = (infer.CustomConfigure)((*Config)(nil))
-
-func (c *Config) Configure(ctx p.Context) error {
-	httpClient := http.Client{
-		Timeout: 60 * time.Second,
-	}
-
-	accessToken := c.AccessToken
-
-	client, err := gitpodapi.NewClient(&httpClient, accessToken, "")
-	if err != nil {
-		return err
-	}
-
-	c.client = *client
-
-	return nil
 }

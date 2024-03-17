@@ -21,6 +21,7 @@ def readme():
 setup(name='pulumi_gitpod',
       python_requires='>=3.8',
       version=VERSION,
+      description="Gitpod provider",
       long_description=readme(),
       long_description_content_type='text/markdown',
       packages=find_packages(),

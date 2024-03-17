@@ -7,8 +7,9 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pierskarsenbarg/pulumi-gitpod/sdk/go/gitpod/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"internal"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // A Gitpod Organization
@@ -16,11 +17,11 @@ type Organization struct {
 	pulumi.CustomResourceState
 
 	// Name of the organization created
-	Name pulumi.StringOutput `pulumi:"name"`
+	Name pulumix.Output[string] `pulumi:"name"`
 	// Id of the organization
-	Org_id pulumi.StringOutput `pulumi:"org_id"`
+	Org_id pulumix.Output[string] `pulumi:"org_id"`
 	// Slug of the organization
-	Slug pulumi.StringOutput `pulumi:"slug"`
+	Slug pulumix.Output[string] `pulumi:"slug"`
 }
 
 // NewOrganization registers a new resource with the given unique name, arguments, and options.
@@ -70,36 +71,17 @@ type organizationArgs struct {
 // The set of arguments for constructing a Organization resource.
 type OrganizationArgs struct {
 	// Name of the organization to create
-	Name pulumi.StringPtrInput
+	Name pulumix.Input[*string]
 }
 
 func (OrganizationArgs) ElementType() reflect.Type {
 	return reflect.TypeOf((*organizationArgs)(nil)).Elem()
 }
 
-type OrganizationInput interface {
-	pulumi.Input
-
-	ToOrganizationOutput() OrganizationOutput
-	ToOrganizationOutputWithContext(ctx context.Context) OrganizationOutput
-}
-
-func (*Organization) ElementType() reflect.Type {
-	return reflect.TypeOf((**Organization)(nil)).Elem()
-}
-
-func (i *Organization) ToOrganizationOutput() OrganizationOutput {
-	return i.ToOrganizationOutputWithContext(context.Background())
-}
-
-func (i *Organization) ToOrganizationOutputWithContext(ctx context.Context) OrganizationOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(OrganizationOutput)
-}
-
 type OrganizationOutput struct{ *pulumi.OutputState }
 
 func (OrganizationOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((**Organization)(nil)).Elem()
+	return reflect.TypeOf((*Organization)(nil)).Elem()
 }
 
 func (o OrganizationOutput) ToOrganizationOutput() OrganizationOutput {
@@ -110,22 +92,30 @@ func (o OrganizationOutput) ToOrganizationOutputWithContext(ctx context.Context)
 	return o
 }
 
+func (o OrganizationOutput) ToOutput(ctx context.Context) pulumix.Output[Organization] {
+	return pulumix.Output[Organization]{
+		OutputState: o.OutputState,
+	}
+}
+
 // Name of the organization created
-func (o OrganizationOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v *Organization) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
+func (o OrganizationOutput) Name() pulumix.Output[string] {
+	value := pulumix.Apply[Organization](o, func(v Organization) pulumix.Output[string] { return v.Name })
+	return pulumix.Flatten[string, pulumix.Output[string]](value)
 }
 
 // Id of the organization
-func (o OrganizationOutput) Org_id() pulumi.StringOutput {
-	return o.ApplyT(func(v *Organization) pulumi.StringOutput { return v.Org_id }).(pulumi.StringOutput)
+func (o OrganizationOutput) Org_id() pulumix.Output[string] {
+	value := pulumix.Apply[Organization](o, func(v Organization) pulumix.Output[string] { return v.Org_id })
+	return pulumix.Flatten[string, pulumix.Output[string]](value)
 }
 
 // Slug of the organization
-func (o OrganizationOutput) Slug() pulumi.StringOutput {
-	return o.ApplyT(func(v *Organization) pulumi.StringOutput { return v.Slug }).(pulumi.StringOutput)
+func (o OrganizationOutput) Slug() pulumix.Output[string] {
+	value := pulumix.Apply[Organization](o, func(v Organization) pulumix.Output[string] { return v.Slug })
+	return pulumix.Flatten[string, pulumix.Output[string]](value)
 }
 
 func init() {
-	pulumi.RegisterInputType(reflect.TypeOf((*OrganizationInput)(nil)).Elem(), &Organization{})
 	pulumi.RegisterOutputType(OrganizationOutput{})
 }

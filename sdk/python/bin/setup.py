@@ -9,7 +9,7 @@ from setuptools.command.install import install
 from subprocess import check_call
 
 
-VERSION = "pulumictl get version --language python"
+VERSION = "0.0.1a1709591095+dirty"
 def readme():
     try:
         with open('README.md', encoding='utf-8') as f:
@@ -21,6 +21,7 @@ def readme():
 setup(name='pulumi_gitpod',
       python_requires='>=3.8',
       version=VERSION,
+      description="Gitpod provider",
       long_description=readme(),
       long_description_content_type='text/markdown',
       packages=find_packages(),

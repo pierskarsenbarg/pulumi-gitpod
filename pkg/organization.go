@@ -1,4 +1,4 @@
-package main
+package pkg
 
 import (
 	"context"
@@ -152,7 +152,7 @@ func (GetOrganization) Call(ctx p.Context, args GetOrganizationArgs) (Organizati
 	req := gitpodapi.OrganizationIdRequest{
 		Id: args.OrganizationId,
 	}
-	org, err := config.client.GetOrganization(ctx, req)
+	org, err := config.Client.GetOrganization(ctx, req)
 	orgResponse := OrganizationState{
 		Id:   args.OrganizationId,
 		Name: org.Organization.Name,
@@ -169,7 +169,7 @@ func (o *Organization) getOrganization(id string, config Config) (*gitpodapi.Org
 	req := gitpodapi.OrganizationIdRequest{
 		Id: id,
 	}
-	org, err := config.client.GetOrganization(ctx, req)
+	org, err := config.Client.GetOrganization(ctx, req)
 	if err != nil {
 		return nil, err
 	}
@@ -181,7 +181,7 @@ func (o *Organization) createOrganization(name string, config Config) (*gitpodap
 	req := gitpodapi.OrganizationRequest{
 		Name: name,
 	}
-	org, err := config.client.CreateOrganization(ctx, req)
+	org, err := config.Client.CreateOrganization(ctx, req)
 	if err != nil {
 		return nil, err
 	}
@@ -193,7 +193,7 @@ func (*Organization) deleteOrganization(id string, config Config) error {
 	req := gitpodapi.OrganizationIdRequest{
 		Id: id,
 	}
-	err := config.client.DeleteOrganization(ctx, req)
+	err := config.Client.DeleteOrganization(ctx, req)
 	if err != nil {
 		return err
 	}
@@ -206,7 +206,7 @@ func (*Organization) updateOrganization(id string, name string, config Config) e
 		Id:   id,
 		Name: name,
 	}
-	err := config.client.UpdateOrganization(ctx, req)
+	err := config.Client.UpdateOrganization(ctx, req)
 	if err != nil {
 		return err
 	}

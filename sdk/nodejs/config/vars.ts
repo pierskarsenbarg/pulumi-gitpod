@@ -10,10 +10,29 @@ const __config = new pulumi.Config("gitpod");
 /**
  * Your Gitpod access token
  */
-export declare const accessToken: string | undefined;
+export declare const accessToken: string;
 Object.defineProperty(exports, "accessToken", {
     get() {
-        return __config.get("accessToken");
+        return __config.get("accessToken") ?? (utilities.getEnv("GITPOD_ACCESSTOKEN") || "");
+    },
+    enumerable: true,
+});
+
+export declare const organizationId: string | undefined;
+Object.defineProperty(exports, "organizationId", {
+    get() {
+        return __config.get("organizationId");
+    },
+    enumerable: true,
+});
+
+/**
+ * Id of owner account
+ */
+export declare const ownerId: string | undefined;
+Object.defineProperty(exports, "ownerId", {
+    get() {
+        return __config.get("ownerId");
     },
     enumerable: true,
 });

@@ -32,7 +32,7 @@ namespace Pulumi.Gitpod
 
         private static readonly global::Pulumi.Config __config = new global::Pulumi.Config("gitpod");
 
-        private static readonly __Value<string?> _accessToken = new __Value<string?>(() => __config.Get("accessToken"));
+        private static readonly __Value<string?> _accessToken = new __Value<string?>(() => __config.Get("accessToken") ?? Utilities.GetEnv("GITPOD_ACCESSTOKEN") ?? "");
         /// <summary>
         /// Your Gitpod access token
         /// </summary>
@@ -40,6 +40,23 @@ namespace Pulumi.Gitpod
         {
             get => _accessToken.Get();
             set => _accessToken.Set(value);
+        }
+
+        private static readonly __Value<string?> _organizationId = new __Value<string?>(() => __config.Get("organizationId"));
+        public static string? OrganizationId
+        {
+            get => _organizationId.Get();
+            set => _organizationId.Set(value);
+        }
+
+        private static readonly __Value<string?> _ownerId = new __Value<string?>(() => __config.Get("ownerId"));
+        /// <summary>
+        /// Id of owner account
+        /// </summary>
+        public static string? OwnerId
+        {
+            get => _ownerId.Get();
+            set => _ownerId.Set(value);
         }
 
     }

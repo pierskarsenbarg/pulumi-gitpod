@@ -2,11 +2,11 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
   <metadata>
     <id>Pulumi.Gitpod</id>
-    <version>0.0.1-alpha.1709587582+63c6da2f.dirty</version>
+    <version>0.0.1-alpha.1709591095+02b5122f.dirty</version>
     <authors>Pulumi Corp.</authors>
     <icon>logo.png</icon>
-    <description>Package Description</description>
-    <repository type="git" commit="63c6da2f8352c39e2056292daf024306bffd5214" />
+    <description>Gitpod provider</description>
+    <repository type="git" commit="02b5122f870c1188d7d99368f3cd45639d51415f" />
     <dependencies>
       <group targetFramework="net6.0">
         <dependency id="Pulumi" version="[3.54.1, 4.0.0)" exclude="Build,Analyzers" />

@@ -5,16 +5,17 @@ plugins:
   providers:
     - name: gitpod
       path: ../../bin
-
 resources:
-  provider:
-    type: pulumi:providers:gitpod
+  my-workspace:
+    type: gitpod:Workspace
     properties:
-      accessToken: "gitpod_pat_oEu1uXlLfoRTYyGFdkEcrQSpZhePsO5vH2lROp4BsRw.rgixkWCuVWEbqacP43dFvbXtrKWdqCMSQ6r776Mn"
-  my-org:
-    type: gitpod:Organization
-    properties:
-      name: pk-test-org2
-    options:
-      provider: ${provider}
+      class: "g1-standard"
+      editor:
+        name: "code"
+        version: "latest"
+      ownerId: "c4493a65-801f-4b61-a62f-41eec6d0ac5b"
+      contextUrl: "https://github.com/pierskarsenbarg/piers.dev"
+outputs:
+  workspace: ${my-workspace.workspaceId}
+
         

@@ -9,6 +9,81 @@
             Your Gitpod access token
             </summary>
         </member>
+        <member name="P:Pulumi.Gitpod.Config.OwnerId">
+            <summary>
+            Id of owner account
+            </summary>
+        </member>
+        <member name="P:Pulumi.Gitpod.EditorName.Code">
+            <summary>
+            Large workspace class - up to 8 cores, up to 16GB RAM, 50GB storage.
+            </summary>
+        </member>
+        <member name="P:Pulumi.Gitpod.EditorName.Code_desktop">
+            <summary>
+            Large workspace class - up to 8 cores, up to 16GB RAM, 50GB storage.
+            </summary>
+        </member>
+        <member name="P:Pulumi.Gitpod.EditorName.Intellij">
+            <summary>
+            Large workspace class - up to 8 cores, up to 16GB RAM, 50GB storage.
+            </summary>
+        </member>
+        <member name="P:Pulumi.Gitpod.EditorName.Goland">
+            <summary>
+            Large workspace class - up to 8 cores, up to 16GB RAM, 50GB storage.
+            </summary>
+        </member>
+        <member name="P:Pulumi.Gitpod.EditorName.Phpstorm">
+            <summary>
+            Large workspace class - up to 8 cores, up to 16GB RAM, 50GB storage.
+            </summary>
+        </member>
+        <member name="P:Pulumi.Gitpod.EditorName.Pycharm">
+            <summary>
+            Large workspace class - up to 8 cores, up to 16GB RAM, 50GB storage.
+            </summary>
+        </member>
+        <member name="P:Pulumi.Gitpod.EditorName.Rubymine">
+            <summary>
+            Large workspace class - up to 8 cores, up to 16GB RAM, 50GB storage.
+            </summary>
+        </member>
+        <member name="P:Pulumi.Gitpod.EditorName.Webstorm">
+            <summary>
+            Large workspace class - up to 8 cores, up to 16GB RAM, 50GB storage.
+            </summary>
+        </member>
+        <member name="P:Pulumi.Gitpod.EditorName.Rider">
+            <summary>
+            Large workspace class - up to 8 cores, up to 16GB RAM, 50GB storage.
+            </summary>
+        </member>
+        <member name="P:Pulumi.Gitpod.EditorName.Clion">
+            <summary>
+            Large workspace class - up to 8 cores, up to 16GB RAM, 50GB storage.
+            </summary>
+        </member>
+        <member name="P:Pulumi.Gitpod.EditorVersion.Latest">
+            <summary>
+            Large workspace class - up to 8 cores, up to 16GB RAM, 50GB storage.
+            </summary>
+        </member>
+        <member name="P:Pulumi.Gitpod.EditorVersion.Stable">
+            <summary>
+            Standard workspace class - up to 4 cores, up to 8GB RAM, 30GB storage
+            </summary>
+        </member>
+        <member name="P:Pulumi.Gitpod.WorkspaceClass.G1_large">
+            <summary>
+            Large workspace class - up to 8 cores, up to 16GB RAM, 50GB storage.
+            </summary>
+        </member>
+        <member name="P:Pulumi.Gitpod.WorkspaceClass.G1_standard">
+            <summary>
+            Standard workspace class - up to 4 cores, up to 8GB RAM, 30GB storage
+            </summary>
+        </member>
         <member name="M:Pulumi.Gitpod.GetOrganization.InvokeAsync(Pulumi.Gitpod.GetOrganizationArgs,Pulumi.InvokeOptions)">
             <summary>
             GetOrganization gets the Organization information
@@ -32,6 +107,16 @@
         <member name="F:Pulumi.Gitpod.GetOrganizationResult.Slug">
             <summary>
             Slug of the organization
+            </summary>
+        </member>
+        <member name="P:Pulumi.Gitpod.Inputs.WorkspaceEditorArgs.Name">
+            <summary>
+            Name of the editor that you'd like to use in your Gitpod workspace. Defaults to VS Code desktop.
+            </summary>
+        </member>
+        <member name="P:Pulumi.Gitpod.Inputs.WorkspaceEditorArgs.Version">
+            <summary>
+            Version of editor to use. Options are `latest` or `stable`. Defaults to `stable`
             </summary>
         </member>
         <member name="T:Pulumi.Gitpod.Organization">
@@ -78,9 +163,64 @@
             Name of the organization to create
             </summary>
         </member>
+        <member name="F:Pulumi.Gitpod.Outputs.WorkspaceStateGitInfo.Branch">
+            <summary>
+            Git branch used to create the workspace
+            </summary>
+        </member>
+        <member name="F:Pulumi.Gitpod.Outputs.WorkspaceStateGitInfo.CloneUrl">
+            <summary>
+            The git clone url used to create the workspace
+            </summary>
+        </member>
+        <member name="F:Pulumi.Gitpod.Outputs.WorkspaceStateGitInfo.LatestCommit">
+            <summary>
+            The commit hash used to create the workspace
+            </summary>
+        </member>
+        <member name="F:Pulumi.Gitpod.Outputs.WorkspaceStateMetaData.Name">
+            <summary>
+            The name of the workspace
+            </summary>
+        </member>
+        <member name="F:Pulumi.Gitpod.Outputs.WorkspaceStateMetaData.OrganizationId">
+            <summary>
+            The ID of the organization that the workspace belongs to
+            </summary>
+        </member>
+        <member name="F:Pulumi.Gitpod.Outputs.WorkspaceStateMetaData.OriginalContextUrl">
+            <summary>
+            The original context URL of the workspace
+            </summary>
+        </member>
+        <member name="F:Pulumi.Gitpod.Outputs.WorkspaceStateMetaData.OwnerId">
+            <summary>
+            The ID of the user that owns the workspace
+            </summary>
+        </member>
+        <member name="F:Pulumi.Gitpod.Outputs.WorkspaceStateSpec.Editor">
+            <summary>
+            The IDE that has been chosen
+            </summary>
+        </member>
+        <member name="F:Pulumi.Gitpod.Outputs.WorkspaceStateSpecEditor.Name">
+            <summary>
+            Name of IDE that is being used in the workspace
+            </summary>
+        </member>
+        <member name="F:Pulumi.Gitpod.Outputs.WorkspaceStateSpecEditor.Version">
+            <summary>
+            Version of the IDE that is being used in the workspace
+            </summary>
+        </member>
         <member name="P:Pulumi.Gitpod.Provider.AccessToken">
             <summary>
             Your Gitpod access token
+            </summary>
+        </member>
+        <member name="P:Pulumi.Gitpod.Provider.OwnerId">
+            <summary>
+            Id of owner account
             </summary>
         </member>
         <member name="M:Pulumi.Gitpod.Provider.#ctor(System.String,Pulumi.Gitpod.ProviderArgs,Pulumi.CustomResourceOptions)">
@@ -95,6 +235,70 @@
         <member name="P:Pulumi.Gitpod.ProviderArgs.AccessToken">
             <summary>
             Your Gitpod access token
+            </summary>
+        </member>
+        <member name="P:Pulumi.Gitpod.ProviderArgs.OwnerId">
+            <summary>
+            Id of owner account
+            </summary>
+        </member>
+        <member name="T:Pulumi.Gitpod.Workspace">
+            <summary>
+            Gitpod workspace
+            </summary>
+        </member>
+        <member name="P:Pulumi.Gitpod.Workspace.GitInfo">
+            <summary>
+            The information from git used to build the workspace
+            </summary>
+        </member>
+        <member name="P:Pulumi.Gitpod.Workspace.Metadata">
+            <summary>
+            The metadata of the workspace
+            </summary>
+        </member>
+        <member name="P:Pulumi.Gitpod.Workspace.WorkspaceId">
+            <summary>
+            The ID of the workspace
+            </summary>
+        </member>
+        <member name="M:Pulumi.Gitpod.Workspace.#ctor(System.String,Pulumi.Gitpod.WorkspaceArgs,Pulumi.CustomResourceOptions)">
+             <summary>
+             Create a Workspace resource with the given unique name, arguments, and options.
+             </summary>
+            
+             <param name="name">The unique name of the resource</param>
+             <param name="args">The arguments used to populate this resource's properties</param>
+             <param name="options">A bag of options that control this resource's behavior</param>
+        </member>
+        <member name="M:Pulumi.Gitpod.Workspace.Get(System.String,Pulumi.Input{System.String},Pulumi.CustomResourceOptions)">
+             <summary>
+             Get an existing Workspace resource's state with the given name, ID, and optional extra
+             properties used to qualify the lookup.
+             </summary>
+            
+             <param name="name">The unique name of the resulting resource.</param>
+             <param name="id">The unique provider ID of the resource to lookup.</param>
+             <param name="options">A bag of options that control this resource's behavior</param>
+        </member>
+        <member name="P:Pulumi.Gitpod.WorkspaceArgs.Class">
+            <summary>
+            Define the compute resources that you want your workspace to use. Defaults to `g1-standard`.
+            </summary>
+        </member>
+        <member name="P:Pulumi.Gitpod.WorkspaceArgs.Editor">
+            <summary>
+            Choose which editor you want to be able to use.
+            </summary>
+        </member>
+        <member name="P:Pulumi.Gitpod.WorkspaceArgs.OrganizationId">
+            <summary>
+            Set the Organization Id of the workspace. If not set then the Organization ID from the stack config will be used.
+            </summary>
+        </member>
+        <member name="P:Pulumi.Gitpod.WorkspaceArgs.OwnerId">
+            <summary>
+            Set the Owner Id of the workspace. If not set then the Owner ID from the stack config will be used.
             </summary>
         </member>
     </members>

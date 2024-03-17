@@ -18,6 +18,15 @@ namespace Pulumi.Gitpod
         [Output("accessToken")]
         public Output<string?> AccessToken { get; private set; } = null!;
 
+        [Output("organizationId")]
+        public Output<string?> OrganizationId { get; private set; } = null!;
+
+        /// <summary>
+        /// Id of owner account
+        /// </summary>
+        [Output("ownerId")]
+        public Output<string?> OwnerId { get; private set; } = null!;
+
 
         /// <summary>
         /// Create a Provider resource with the given unique name, arguments, and options.
@@ -66,8 +75,18 @@ namespace Pulumi.Gitpod
             }
         }
 
+        [Input("organizationId")]
+        public Input<string>? OrganizationId { get; set; }
+
+        /// <summary>
+        /// Id of owner account
+        /// </summary>
+        [Input("ownerId")]
+        public Input<string>? OwnerId { get; set; }
+
         public ProviderArgs()
         {
+            AccessToken = Utilities.GetEnv("GITPOD_ACCESSTOKEN") ?? "";
         }
         public static new ProviderArgs Empty => new ProviderArgs();
     }

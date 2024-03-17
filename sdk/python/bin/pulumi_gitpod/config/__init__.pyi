@@ -9,8 +9,15 @@ import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
-accessToken: Optional[str]
+accessToken: str
 """
 Your Gitpod access token
+"""
+
+organizationId: Optional[str]
+
+ownerId: Optional[str]
+"""
+Id of owner account
 """
 

@@ -9,6 +9,11 @@ export declare class Provider extends pulumi.ProviderResource {
      * Your Gitpod access token
      */
     readonly accessToken: pulumi.Output<string | undefined>;
+    readonly organizationId: pulumi.Output<string | undefined>;
+    /**
+     * Id of owner account
+     */
+    readonly ownerId: pulumi.Output<string | undefined>;
     /**
      * Create a Provider resource with the given unique name, arguments, and options.
      *
@@ -26,4 +31,9 @@ export interface ProviderArgs {
      * Your Gitpod access token
      */
     accessToken?: pulumi.Input<string>;
+    organizationId?: pulumi.Input<string>;
+    /**
+     * Id of owner account
+     */
+    ownerId?: pulumi.Input<string>;
 }

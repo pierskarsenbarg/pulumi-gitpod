@@ -1,0 +1,4 @@
+config:
+  gitpod:accessToken:
+    secure: AAABAPo1hJGPotQq7OEEK5uh6GnTy2xeQ0hM4+lDVzSw1qKDNLaKBQL76TZn71D36i50cfyP/pqsW9y9eC38/Dv2wbLpZRrhfChT3dVM7w+lIwhFt2akcd5GxNX9mSSIxJLDVUHeEn4MdXnNtgetc7NNC7paCXKmdSQ3pg0w1A==
+  gitpod:organizationId: 133a08da-3460-408c-a1b0-399508140dff

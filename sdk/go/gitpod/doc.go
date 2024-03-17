@@ -1,2 +1,2 @@
-// Package gitpod exports types, functions, subpackages for provisioning gitpod resources.
+// Gitpod provider
 package gitpod

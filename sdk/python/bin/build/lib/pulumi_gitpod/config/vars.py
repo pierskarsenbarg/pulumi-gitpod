@@ -16,9 +16,20 @@ __config__ = pulumi.Config('gitpod')
 
 class _ExportableConfig(types.ModuleType):
     @property
-    def access_token(self) -> Optional[str]:
+    def access_token(self) -> str:
         """
         Your Gitpod access token
         """
-        return __config__.get('accessToken')
+        return __config__.get('accessToken') or (_utilities.get_env('GITPOD_ACCESSTOKEN') or '')
+
+    @property
+    def organization_id(self) -> Optional[str]:
+        return __config__.get('organizationId')
+
+    @property
+    def owner_id(self) -> Optional[str]:
+        """
+        Id of owner account
+        """
+        return __config__.get('ownerId')
 

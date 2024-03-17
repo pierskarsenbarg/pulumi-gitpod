@@ -4,14 +4,30 @@
 package config
 
 import (
+	"github.com/pierskarsenbarg/pulumi-gitpod/sdk/go/gitpod/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi/config"
-	"internal"
 )
 
 var _ = internal.GetEnvOrDefault
 
 // Your Gitpod access token
 func GetAccessToken(ctx *pulumi.Context) string {
-	return config.Get(ctx, "gitpod:accessToken")
+	v, err := config.Try(ctx, "gitpod:accessToken")
+	if err == nil {
+		return v
+	}
+	var value string
+	if d := internal.GetEnvOrDefault("", nil, "GITPOD_ACCESSTOKEN"); d != nil {
+		value = d.(string)
+	}
+	return value
+}
+func GetOrganizationId(ctx *pulumi.Context) string {
+	return config.Get(ctx, "gitpod:organizationId")
+}
+
+// Id of owner account
+func GetOwnerId(ctx *pulumi.Context) string {
+	return config.Get(ctx, "gitpod:ownerId")
 }
