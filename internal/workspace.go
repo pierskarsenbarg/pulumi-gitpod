@@ -58,12 +58,17 @@ type WorkspaceResponseSpecEditor struct {
 type WorkspaceResponseStatus struct {
 	InstanceId string                           `json:"instanceId"`
 	GitStatus  WorkspaceResponseStatusGitStatus `json:"gitStatus"`
+	Phase      WorkspaceResponseStatusPhase     `json:"phase"`
 }
 
 type WorkspaceResponseStatusGitStatus struct {
 	CloneUrl     string `json:"cloneUrl"`
 	Branch       string `json:"branch"`
 	LatestCommit string `json:"latestCommit"`
+}
+
+type WorkspaceResponseStatusPhase struct {
+	Name string `json:"name"`
 }
 
 type WorkspaceRequest struct {

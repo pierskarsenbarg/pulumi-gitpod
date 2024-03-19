@@ -16,12 +16,15 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
     for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.types = exports.config = exports.Workspace = exports.Provider = exports.Organization = exports.getOrganizationOutput = exports.getOrganization = void 0;
+exports.types = exports.config = exports.Workspace = exports.Provider = exports.Organization = exports.getWorkspaceOutput = exports.getWorkspace = exports.getOrganizationOutput = exports.getOrganization = void 0;
 const pulumi = require("@pulumi/pulumi");
 const utilities = require("./utilities");
 exports.getOrganization = null;
 exports.getOrganizationOutput = null;
 utilities.lazyLoad(exports, ["getOrganization", "getOrganizationOutput"], () => require("./getOrganization"));
+exports.getWorkspace = null;
+exports.getWorkspaceOutput = null;
+utilities.lazyLoad(exports, ["getWorkspace", "getWorkspaceOutput"], () => require("./getWorkspace"));
 exports.Organization = null;
 utilities.lazyLoad(exports, ["Organization"], () => require("./organization"));
 exports.Provider = null;

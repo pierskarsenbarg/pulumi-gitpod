@@ -1,6 +1,9 @@
 export { GetOrganizationArgs, GetOrganizationResult } from "./getOrganization";
 export declare const getOrganization: typeof import("./getOrganization").getOrganization;
 export declare const getOrganizationOutput: typeof import("./getOrganization").getOrganizationOutput;
+export { GetWorkspaceArgs, GetWorkspaceResult } from "./getWorkspace";
+export declare const getWorkspace: typeof import("./getWorkspace").getWorkspace;
+export declare const getWorkspaceOutput: typeof import("./getWorkspace").getWorkspaceOutput;
 export { OrganizationArgs } from "./organization";
 export type Organization = import("./organization").Organization;
 export declare const Organization: typeof import("./organization").Organization;

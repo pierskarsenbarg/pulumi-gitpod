@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "32wMZP0ccHENsQzEhH+yb8G7DleGv+zRGLjxFSEA5IGoPzRRA8uGeeZU2B5VlrK1tcPHvF0K8EfKYNY4xWJLRw==",
+  "dgSpecHash": "w2Q0exOty0Uk8DJnC7rbhdgdPN8cct5jtZ4zeM6NA3B66mok4Rf7ufAG+qr9Te+mmO4E4syzs2p1zBZnJ2x3jg==",
   "success": true,
   "projectFilePath": "/Users/pierskarsenbarg/go/src/github.com/pierskarsenbarg/pulumi-gitpod/sdk/dotnet/PiersKarsenbarg.Gitpod.csproj",
   "expectedPackageFiles": [

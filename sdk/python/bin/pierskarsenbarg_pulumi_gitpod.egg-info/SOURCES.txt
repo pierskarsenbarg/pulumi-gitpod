@@ -5,6 +5,7 @@ pierskarsenbarg_pulumi_gitpod/_enums.py
 pierskarsenbarg_pulumi_gitpod/_inputs.py
 pierskarsenbarg_pulumi_gitpod/_utilities.py
 pierskarsenbarg_pulumi_gitpod/get_organization.py
+pierskarsenbarg_pulumi_gitpod/get_workspace.py
 pierskarsenbarg_pulumi_gitpod/organization.py
 pierskarsenbarg_pulumi_gitpod/outputs.py
 pierskarsenbarg_pulumi_gitpod/provider.py

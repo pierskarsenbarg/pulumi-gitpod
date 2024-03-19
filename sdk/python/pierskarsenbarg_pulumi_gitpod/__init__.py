@@ -7,6 +7,7 @@ import typing
 # Export this package's modules as members:
 from ._enums import *
 from .get_organization import *
+from .get_workspace import *
 from .organization import *
 from .provider import *
 from .workspace import *

@@ -103,6 +103,12 @@ func (wse *WorkspaceStateSpecEditor) Annotate(a infer.Annotator) {
 	a.Describe(&wse.Version, "Version of the IDE that is being used in the workspace")
 }
 
+type GetWorkspace struct{}
+
+type GetWorkspaceArgs struct {
+	WorkspaceId string `json:"workspaceId"`
+}
+
 func (w *Workspace) Create(ctx p.Context, name string, input WorkspaceArgs, preview bool) (
 	id string, output WorkspaceState, err error) {
 	config := infer.GetConfig[Config](ctx)
@@ -210,6 +216,24 @@ func (w *Workspace) Read(ctx p.Context, id string, inputs WorkspaceArgs, state W
 			Class: res.Workspace.Spec.Class,
 		},
 	}, nil
+}
+
+func (GetWorkspace) Call(ctx p.Context, args GetWorkspaceArgs) (WorkspaceState, error) {
+	config := infer.GetConfig[Config](ctx)
+	req := gitpodapi.WorkspaceRequest{
+		WorkspaceId: args.WorkspaceId,
+	}
+	ws, err := config.Client.GetWorkspace(ctx, req)
+	orgResponse := WorkspaceState{
+		Id: args.WorkspaceId,
+		Metadata: WorkspaceStateMetaData{
+			OwnerId: ws.Workspace.MetaData.OwnerId,
+		},
+	}
+	if err != nil {
+		return WorkspaceState{}, err
+	}
+	return orgResponse, nil
 }
 
 func (w *Workspace) createWorkspace(args WorkspaceArgs, config Config) (*gitpodapi.WorkspaceResponse, error) {

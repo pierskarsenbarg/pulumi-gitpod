@@ -70,6 +70,7 @@ func provider() p.Provider {
 		},
 		Functions: []infer.InferredFunction{
 			infer.Function[*pkg.GetOrganization, pkg.GetOrganizationArgs, pkg.OrganizationState](),
+			infer.Function[*pkg.GetWorkspace, pkg.GetWorkspaceArgs, pkg.WorkspaceState](),
 		},
 		Config: infer.Config[*pkg.Config](),
 	})

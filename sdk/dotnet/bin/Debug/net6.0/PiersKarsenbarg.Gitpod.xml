@@ -109,6 +109,21 @@
             Slug of the organization
             </summary>
         </member>
+        <member name="F:PiersKarsenbarg.Gitpod.GetWorkspaceResult.GitInfo">
+            <summary>
+            The information from git used to build the workspace
+            </summary>
+        </member>
+        <member name="F:PiersKarsenbarg.Gitpod.GetWorkspaceResult.Metadata">
+            <summary>
+            The metadata of the workspace
+            </summary>
+        </member>
+        <member name="F:PiersKarsenbarg.Gitpod.GetWorkspaceResult.WorkspaceId">
+            <summary>
+            The ID of the workspace
+            </summary>
+        </member>
         <member name="P:PiersKarsenbarg.Gitpod.Inputs.WorkspaceEditorArgs.Name">
             <summary>
             Name of the editor that you'd like to use in your Gitpod workspace. Defaults to VS Code desktop.

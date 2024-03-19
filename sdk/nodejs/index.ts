@@ -10,6 +10,11 @@ export const getOrganization: typeof import("./getOrganization").getOrganization
 export const getOrganizationOutput: typeof import("./getOrganization").getOrganizationOutput = null as any;
 utilities.lazyLoad(exports, ["getOrganization","getOrganizationOutput"], () => require("./getOrganization"));
 
+export { GetWorkspaceArgs, GetWorkspaceResult } from "./getWorkspace";
+export const getWorkspace: typeof import("./getWorkspace").getWorkspace = null as any;
+export const getWorkspaceOutput: typeof import("./getWorkspace").getWorkspaceOutput = null as any;
+utilities.lazyLoad(exports, ["getWorkspace","getWorkspaceOutput"], () => require("./getWorkspace"));
+
 export { OrganizationArgs } from "./organization";
 export type Organization = import("./organization").Organization;
 export const Organization: typeof import("./organization").Organization = null as any;
