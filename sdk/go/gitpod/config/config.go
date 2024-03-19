@@ -24,10 +24,26 @@ func GetAccessToken(ctx *pulumi.Context) string {
 	return value
 }
 func GetOrganizationId(ctx *pulumi.Context) string {
-	return config.Get(ctx, "gitpod:organizationId")
+	v, err := config.Try(ctx, "gitpod:organizationId")
+	if err == nil {
+		return v
+	}
+	var value string
+	if d := internal.GetEnvOrDefault("", nil, "GITPOD_ORGANISATIONID"); d != nil {
+		value = d.(string)
+	}
+	return value
 }
 
 // Id of owner account
 func GetOwnerId(ctx *pulumi.Context) string {
-	return config.Get(ctx, "gitpod:ownerId")
+	v, err := config.Try(ctx, "gitpod:ownerId")
+	if err == nil {
+		return v
+	}
+	var value string
+	if d := internal.GetEnvOrDefault("", nil, "GITPOD_OWNERID"); d != nil {
+		value = d.(string)
+	}
+	return value
 }

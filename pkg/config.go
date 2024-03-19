@@ -22,6 +22,8 @@ func (c *Config) Annotate(a infer.Annotator) {
 	a.Describe(&c.AccessToken, "Your Gitpod access token")
 	a.Describe(&c.OwnerId, "Id of owner account")
 	a.SetDefault(&c.AccessToken, "", "GITPOD_ACCESSTOKEN")
+	a.SetDefault(&c.OrganizationId, "", "GITPOD_ORGANISATIONID")
+	a.SetDefault(&c.OwnerId, "", "GITPOD_OWNERID")
 }
 
 var _ = (infer.CustomConfigure)((*Config)(nil))

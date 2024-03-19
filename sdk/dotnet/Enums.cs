@@ -5,7 +5,7 @@ using System;
 using System.ComponentModel;
 using Pulumi;
 
-namespace Pulumi.Gitpod
+namespace PiersKarsenbarg.Gitpod
 {
     [EnumType]
     public readonly struct EditorName : IEquatable<EditorName>

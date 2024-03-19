@@ -41,8 +41,8 @@ export class Provider extends pulumi.ProviderResource {
         opts = opts || {};
         {
             resourceInputs["accessToken"] = (args?.accessToken ? pulumi.secret(args.accessToken) : undefined) ?? (utilities.getEnv("GITPOD_ACCESSTOKEN") || "");
-            resourceInputs["organizationId"] = args ? args.organizationId : undefined;
-            resourceInputs["ownerId"] = args ? args.ownerId : undefined;
+            resourceInputs["organizationId"] = (args ? args.organizationId : undefined) ?? (utilities.getEnv("GITPOD_ORGANISATIONID") || "");
+            resourceInputs["ownerId"] = (args ? args.ownerId : undefined) ?? (utilities.getEnv("GITPOD_OWNERID") || "");
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         const secretOpts = { additionalSecretOutputs: ["accessToken"] };

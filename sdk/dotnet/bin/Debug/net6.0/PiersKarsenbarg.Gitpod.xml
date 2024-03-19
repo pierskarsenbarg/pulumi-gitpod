@@ -1,0 +1,305 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PiersKarsenbarg.Gitpod</name>
+    </assembly>
+    <members>
+        <member name="P:PiersKarsenbarg.Gitpod.Config.AccessToken">
+            <summary>
+            Your Gitpod access token
+            </summary>
+        </member>
+        <member name="P:PiersKarsenbarg.Gitpod.Config.OwnerId">
+            <summary>
+            Id of owner account
+            </summary>
+        </member>
+        <member name="P:PiersKarsenbarg.Gitpod.EditorName.Code">
+            <summary>
+            Large workspace class - up to 8 cores, up to 16GB RAM, 50GB storage.
+            </summary>
+        </member>
+        <member name="P:PiersKarsenbarg.Gitpod.EditorName.Code_desktop">
+            <summary>
+            Large workspace class - up to 8 cores, up to 16GB RAM, 50GB storage.
+            </summary>
+        </member>
+        <member name="P:PiersKarsenbarg.Gitpod.EditorName.Intellij">
+            <summary>
+            Large workspace class - up to 8 cores, up to 16GB RAM, 50GB storage.
+            </summary>
+        </member>
+        <member name="P:PiersKarsenbarg.Gitpod.EditorName.Goland">
+            <summary>
+            Large workspace class - up to 8 cores, up to 16GB RAM, 50GB storage.
+            </summary>
+        </member>
+        <member name="P:PiersKarsenbarg.Gitpod.EditorName.Phpstorm">
+            <summary>
+            Large workspace class - up to 8 cores, up to 16GB RAM, 50GB storage.
+            </summary>
+        </member>
+        <member name="P:PiersKarsenbarg.Gitpod.EditorName.Pycharm">
+            <summary>
+            Large workspace class - up to 8 cores, up to 16GB RAM, 50GB storage.
+            </summary>
+        </member>
+        <member name="P:PiersKarsenbarg.Gitpod.EditorName.Rubymine">
+            <summary>
+            Large workspace class - up to 8 cores, up to 16GB RAM, 50GB storage.
+            </summary>
+        </member>
+        <member name="P:PiersKarsenbarg.Gitpod.EditorName.Webstorm">
+            <summary>
+            Large workspace class - up to 8 cores, up to 16GB RAM, 50GB storage.
+            </summary>
+        </member>
+        <member name="P:PiersKarsenbarg.Gitpod.EditorName.Rider">
+            <summary>
+            Large workspace class - up to 8 cores, up to 16GB RAM, 50GB storage.
+            </summary>
+        </member>
+        <member name="P:PiersKarsenbarg.Gitpod.EditorName.Clion">
+            <summary>
+            Large workspace class - up to 8 cores, up to 16GB RAM, 50GB storage.
+            </summary>
+        </member>
+        <member name="P:PiersKarsenbarg.Gitpod.EditorVersion.Latest">
+            <summary>
+            Large workspace class - up to 8 cores, up to 16GB RAM, 50GB storage.
+            </summary>
+        </member>
+        <member name="P:PiersKarsenbarg.Gitpod.EditorVersion.Stable">
+            <summary>
+            Standard workspace class - up to 4 cores, up to 8GB RAM, 30GB storage
+            </summary>
+        </member>
+        <member name="P:PiersKarsenbarg.Gitpod.WorkspaceClass.G1_large">
+            <summary>
+            Large workspace class - up to 8 cores, up to 16GB RAM, 50GB storage.
+            </summary>
+        </member>
+        <member name="P:PiersKarsenbarg.Gitpod.WorkspaceClass.G1_standard">
+            <summary>
+            Standard workspace class - up to 4 cores, up to 8GB RAM, 30GB storage
+            </summary>
+        </member>
+        <member name="M:PiersKarsenbarg.Gitpod.GetOrganization.InvokeAsync(PiersKarsenbarg.Gitpod.GetOrganizationArgs,Pulumi.InvokeOptions)">
+            <summary>
+            GetOrganization gets the Organization information
+            </summary>
+        </member>
+        <member name="M:PiersKarsenbarg.Gitpod.GetOrganization.Invoke(Pulumi.InvokeOptions)">
+            <summary>
+            GetOrganization gets the Organization information
+            </summary>
+        </member>
+        <member name="F:PiersKarsenbarg.Gitpod.GetOrganizationResult.Name">
+            <summary>
+            Name of the organization created
+            </summary>
+        </member>
+        <member name="F:PiersKarsenbarg.Gitpod.GetOrganizationResult.Org_id">
+            <summary>
+            Id of the organization
+            </summary>
+        </member>
+        <member name="F:PiersKarsenbarg.Gitpod.GetOrganizationResult.Slug">
+            <summary>
+            Slug of the organization
+            </summary>
+        </member>
+        <member name="P:PiersKarsenbarg.Gitpod.Inputs.WorkspaceEditorArgs.Name">
+            <summary>
+            Name of the editor that you'd like to use in your Gitpod workspace. Defaults to VS Code desktop.
+            </summary>
+        </member>
+        <member name="P:PiersKarsenbarg.Gitpod.Inputs.WorkspaceEditorArgs.Version">
+            <summary>
+            Version of editor to use. Options are `latest` or `stable`. Defaults to `stable`
+            </summary>
+        </member>
+        <member name="T:PiersKarsenbarg.Gitpod.Organization">
+            <summary>
+            A Gitpod Organization
+            </summary>
+        </member>
+        <member name="P:PiersKarsenbarg.Gitpod.Organization.Name">
+            <summary>
+            Name of the organization created
+            </summary>
+        </member>
+        <member name="P:PiersKarsenbarg.Gitpod.Organization.Org_id">
+            <summary>
+            Id of the organization
+            </summary>
+        </member>
+        <member name="P:PiersKarsenbarg.Gitpod.Organization.Slug">
+            <summary>
+            Slug of the organization
+            </summary>
+        </member>
+        <member name="M:PiersKarsenbarg.Gitpod.Organization.#ctor(System.String,PiersKarsenbarg.Gitpod.OrganizationArgs,Pulumi.CustomResourceOptions)">
+             <summary>
+             Create a Organization resource with the given unique name, arguments, and options.
+             </summary>
+            
+             <param name="name">The unique name of the resource</param>
+             <param name="args">The arguments used to populate this resource's properties</param>
+             <param name="options">A bag of options that control this resource's behavior</param>
+        </member>
+        <member name="M:PiersKarsenbarg.Gitpod.Organization.Get(System.String,Pulumi.Input{System.String},Pulumi.CustomResourceOptions)">
+             <summary>
+             Get an existing Organization resource's state with the given name, ID, and optional extra
+             properties used to qualify the lookup.
+             </summary>
+            
+             <param name="name">The unique name of the resulting resource.</param>
+             <param name="id">The unique provider ID of the resource to lookup.</param>
+             <param name="options">A bag of options that control this resource's behavior</param>
+        </member>
+        <member name="P:PiersKarsenbarg.Gitpod.OrganizationArgs.Name">
+            <summary>
+            Name of the organization to create
+            </summary>
+        </member>
+        <member name="F:PiersKarsenbarg.Gitpod.Outputs.WorkspaceStateGitInfo.Branch">
+            <summary>
+            Git branch used to create the workspace
+            </summary>
+        </member>
+        <member name="F:PiersKarsenbarg.Gitpod.Outputs.WorkspaceStateGitInfo.CloneUrl">
+            <summary>
+            The git clone url used to create the workspace
+            </summary>
+        </member>
+        <member name="F:PiersKarsenbarg.Gitpod.Outputs.WorkspaceStateGitInfo.LatestCommit">
+            <summary>
+            The commit hash used to create the workspace
+            </summary>
+        </member>
+        <member name="F:PiersKarsenbarg.Gitpod.Outputs.WorkspaceStateMetaData.Name">
+            <summary>
+            The name of the workspace
+            </summary>
+        </member>
+        <member name="F:PiersKarsenbarg.Gitpod.Outputs.WorkspaceStateMetaData.OrganizationId">
+            <summary>
+            The ID of the organization that the workspace belongs to
+            </summary>
+        </member>
+        <member name="F:PiersKarsenbarg.Gitpod.Outputs.WorkspaceStateMetaData.OriginalContextUrl">
+            <summary>
+            The original context URL of the workspace
+            </summary>
+        </member>
+        <member name="F:PiersKarsenbarg.Gitpod.Outputs.WorkspaceStateMetaData.OwnerId">
+            <summary>
+            The ID of the user that owns the workspace
+            </summary>
+        </member>
+        <member name="F:PiersKarsenbarg.Gitpod.Outputs.WorkspaceStateSpec.Editor">
+            <summary>
+            The IDE that has been chosen
+            </summary>
+        </member>
+        <member name="F:PiersKarsenbarg.Gitpod.Outputs.WorkspaceStateSpecEditor.Name">
+            <summary>
+            Name of IDE that is being used in the workspace
+            </summary>
+        </member>
+        <member name="F:PiersKarsenbarg.Gitpod.Outputs.WorkspaceStateSpecEditor.Version">
+            <summary>
+            Version of the IDE that is being used in the workspace
+            </summary>
+        </member>
+        <member name="P:PiersKarsenbarg.Gitpod.Provider.AccessToken">
+            <summary>
+            Your Gitpod access token
+            </summary>
+        </member>
+        <member name="P:PiersKarsenbarg.Gitpod.Provider.OwnerId">
+            <summary>
+            Id of owner account
+            </summary>
+        </member>
+        <member name="M:PiersKarsenbarg.Gitpod.Provider.#ctor(System.String,PiersKarsenbarg.Gitpod.ProviderArgs,Pulumi.CustomResourceOptions)">
+             <summary>
+             Create a Provider resource with the given unique name, arguments, and options.
+             </summary>
+            
+             <param name="name">The unique name of the resource</param>
+             <param name="args">The arguments used to populate this resource's properties</param>
+             <param name="options">A bag of options that control this resource's behavior</param>
+        </member>
+        <member name="P:PiersKarsenbarg.Gitpod.ProviderArgs.AccessToken">
+            <summary>
+            Your Gitpod access token
+            </summary>
+        </member>
+        <member name="P:PiersKarsenbarg.Gitpod.ProviderArgs.OwnerId">
+            <summary>
+            Id of owner account
+            </summary>
+        </member>
+        <member name="T:PiersKarsenbarg.Gitpod.Workspace">
+            <summary>
+            Gitpod workspace
+            </summary>
+        </member>
+        <member name="P:PiersKarsenbarg.Gitpod.Workspace.GitInfo">
+            <summary>
+            The information from git used to build the workspace
+            </summary>
+        </member>
+        <member name="P:PiersKarsenbarg.Gitpod.Workspace.Metadata">
+            <summary>
+            The metadata of the workspace
+            </summary>
+        </member>
+        <member name="P:PiersKarsenbarg.Gitpod.Workspace.WorkspaceId">
+            <summary>
+            The ID of the workspace
+            </summary>
+        </member>
+        <member name="M:PiersKarsenbarg.Gitpod.Workspace.#ctor(System.String,PiersKarsenbarg.Gitpod.WorkspaceArgs,Pulumi.CustomResourceOptions)">
+             <summary>
+             Create a Workspace resource with the given unique name, arguments, and options.
+             </summary>
+            
+             <param name="name">The unique name of the resource</param>
+             <param name="args">The arguments used to populate this resource's properties</param>
+             <param name="options">A bag of options that control this resource's behavior</param>
+        </member>
+        <member name="M:PiersKarsenbarg.Gitpod.Workspace.Get(System.String,Pulumi.Input{System.String},Pulumi.CustomResourceOptions)">
+             <summary>
+             Get an existing Workspace resource's state with the given name, ID, and optional extra
+             properties used to qualify the lookup.
+             </summary>
+            
+             <param name="name">The unique name of the resulting resource.</param>
+             <param name="id">The unique provider ID of the resource to lookup.</param>
+             <param name="options">A bag of options that control this resource's behavior</param>
+        </member>
+        <member name="P:PiersKarsenbarg.Gitpod.WorkspaceArgs.Class">
+            <summary>
+            Define the compute resources that you want your workspace to use. Defaults to `g1-standard`.
+            </summary>
+        </member>
+        <member name="P:PiersKarsenbarg.Gitpod.WorkspaceArgs.Editor">
+            <summary>
+            Choose which editor you want to be able to use.
+            </summary>
+        </member>
+        <member name="P:PiersKarsenbarg.Gitpod.WorkspaceArgs.OrganizationId">
+            <summary>
+            Set the Organization Id of the workspace. If not set then the Organization ID from the stack config will be used.
+            </summary>
+        </member>
+        <member name="P:PiersKarsenbarg.Gitpod.WorkspaceArgs.OwnerId">
+            <summary>
+            Set the Owner Id of the workspace. If not set then the Owner ID from the stack config will be used.
+            </summary>
+        </member>
+    </members>
+</doc>

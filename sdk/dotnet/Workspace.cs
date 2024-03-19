@@ -6,8 +6,9 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Threading.Tasks;
 using Pulumi.Serialization;
+using Pulumi;
 
-namespace Pulumi.Gitpod
+namespace PiersKarsenbarg.Gitpod
 {
     /// <summary>
     /// Gitpod workspace
@@ -59,6 +60,7 @@ namespace Pulumi.Gitpod
             var defaultOptions = new CustomResourceOptions
             {
                 Version = Utilities.Version,
+                PluginDownloadURL = "github://api.github.com/pierskarsenbarg/pulumi-gitpod",
             };
             var merged = CustomResourceOptions.Merge(defaultOptions, options);
             // Override the ID if one was specified for consistency with other language SDKs.
@@ -85,7 +87,7 @@ namespace Pulumi.Gitpod
         /// Define the compute resources that you want your workspace to use. Defaults to `g1-standard`.
         /// </summary>
         [Input("class")]
-        public Input<Pulumi.Gitpod.WorkspaceClass>? Class { get; set; }
+        public Input<PiersKarsenbarg.Gitpod.WorkspaceClass>? Class { get; set; }
 
         [Input("contextUrl", required: true)]
         public Input<string> ContextUrl { get; set; } = null!;

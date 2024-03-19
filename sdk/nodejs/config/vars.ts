@@ -18,10 +18,10 @@ Object.defineProperty(exports, "accessToken", {
     enumerable: true,
 });
 
-export declare const organizationId: string | undefined;
+export declare const organizationId: string;
 Object.defineProperty(exports, "organizationId", {
     get() {
-        return __config.get("organizationId");
+        return __config.get("organizationId") ?? (utilities.getEnv("GITPOD_ORGANISATIONID") || "");
     },
     enumerable: true,
 });
@@ -29,10 +29,10 @@ Object.defineProperty(exports, "organizationId", {
 /**
  * Id of owner account
  */
-export declare const ownerId: string | undefined;
+export declare const ownerId: string;
 Object.defineProperty(exports, "ownerId", {
     get() {
-        return __config.get("ownerId");
+        return __config.get("ownerId") ?? (utilities.getEnv("GITPOD_OWNERID") || "");
     },
     enumerable: true,
 });

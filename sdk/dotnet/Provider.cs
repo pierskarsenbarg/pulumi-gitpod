@@ -6,8 +6,9 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Threading.Tasks;
 using Pulumi.Serialization;
+using Pulumi;
 
-namespace Pulumi.Gitpod
+namespace PiersKarsenbarg.Gitpod
 {
     [GitpodResourceType("pulumi:providers:gitpod")]
     public partial class Provider : global::Pulumi.ProviderResource
@@ -45,6 +46,7 @@ namespace Pulumi.Gitpod
             var defaultOptions = new CustomResourceOptions
             {
                 Version = Utilities.Version,
+                PluginDownloadURL = "github://api.github.com/pierskarsenbarg/pulumi-gitpod",
                 AdditionalSecretOutputs =
                 {
                     "accessToken",
@@ -87,6 +89,8 @@ namespace Pulumi.Gitpod
         public ProviderArgs()
         {
             AccessToken = Utilities.GetEnv("GITPOD_ACCESSTOKEN") ?? "";
+            OrganizationId = Utilities.GetEnv("GITPOD_ORGANISATIONID") ?? "";
+            OwnerId = Utilities.GetEnv("GITPOD_OWNERID") ?? "";
         }
         public static new ProviderArgs Empty => new ProviderArgs();
     }

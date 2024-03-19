@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>PiersKarsenbarg.Gitpod</id>
+    <version>0.0.1-alpha.1710714351+721483b0.dirty</version>
+    <authors>Piers Karsenbarg</authors>
+    <icon>logo.png</icon>
+    <description>Gitpod provider</description>
+    <repository type="git" url="https://github.com/pierskarsenbarg/pulumi-gitpod.git" commit="721483b078204dcc16c7535179b5fb57516d7185" />
+    <dependencies>
+      <group targetFramework="net6.0">
+        <dependency id="Pulumi" version="3.60.0" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="/Users/pierskarsenbarg/go/src/github.com/pierskarsenbarg/pulumi-gitpod/sdk/dotnet/bin/Debug/net6.0/PiersKarsenbarg.Gitpod.pdb" target="lib/net6.0/PiersKarsenbarg.Gitpod.pdb" />
+    <file src="/Users/pierskarsenbarg/go/src/github.com/pierskarsenbarg/pulumi-gitpod/sdk/dotnet/bin/Debug/net6.0/PiersKarsenbarg.Gitpod.dll" target="lib/net6.0/PiersKarsenbarg.Gitpod.dll" />
+    <file src="/Users/pierskarsenbarg/go/src/github.com/pierskarsenbarg/pulumi-gitpod/sdk/dotnet/bin/Debug/net6.0/PiersKarsenbarg.Gitpod.xml" target="lib/net6.0/PiersKarsenbarg.Gitpod.xml" />
+    <file src="/Users/pierskarsenbarg/go/src/github.com/pierskarsenbarg/pulumi-gitpod/sdk/dotnet/version.txt" target="content/version.txt" />
+    <file src="/Users/pierskarsenbarg/go/src/github.com/pierskarsenbarg/pulumi-gitpod/sdk/dotnet/pulumi-plugin.json" target="content/pulumi-plugin.json" />
+    <file src="/Users/pierskarsenbarg/go/src/github.com/pierskarsenbarg/pulumi-gitpod/sdk/dotnet/logo.png" target="logo.png" />
+  </files>
+</package>

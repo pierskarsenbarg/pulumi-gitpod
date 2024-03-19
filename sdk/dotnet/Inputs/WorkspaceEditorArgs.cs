@@ -6,8 +6,9 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Threading.Tasks;
 using Pulumi.Serialization;
+using Pulumi;
 
-namespace Pulumi.Gitpod.Inputs
+namespace PiersKarsenbarg.Gitpod.Inputs
 {
 
     public sealed class WorkspaceEditorArgs : global::Pulumi.ResourceArgs
@@ -16,18 +17,18 @@ namespace Pulumi.Gitpod.Inputs
         /// Name of the editor that you'd like to use in your Gitpod workspace. Defaults to VS Code desktop.
         /// </summary>
         [Input("name")]
-        public Input<Pulumi.Gitpod.EditorName>? Name { get; set; }
+        public Input<PiersKarsenbarg.Gitpod.EditorName>? Name { get; set; }
 
         /// <summary>
         /// Version of editor to use. Options are `latest` or `stable`. Defaults to `stable`
         /// </summary>
         [Input("version")]
-        public Input<Pulumi.Gitpod.EditorVersion>? Version { get; set; }
+        public Input<PiersKarsenbarg.Gitpod.EditorVersion>? Version { get; set; }
 
         public WorkspaceEditorArgs()
         {
-            Name = Pulumi.Gitpod.EditorName.Code;
-            Version = Pulumi.Gitpod.EditorVersion.Stable;
+            Name = PiersKarsenbarg.Gitpod.EditorName.Code;
+            Version = PiersKarsenbarg.Gitpod.EditorVersion.Stable;
         }
         public static new WorkspaceEditorArgs Empty => new WorkspaceEditorArgs();
     }

@@ -34,6 +34,16 @@ func NewProvider(ctx *pulumi.Context,
 			args.AccessToken = pulumix.Ptr(d.(string))
 		}
 	}
+	if args.OrganizationId == nil {
+		if d := internal.GetEnvOrDefault("", nil, "GITPOD_ORGANISATIONID"); d != nil {
+			args.OrganizationId = pulumix.Ptr(d.(string))
+		}
+	}
+	if args.OwnerId == nil {
+		if d := internal.GetEnvOrDefault("", nil, "GITPOD_OWNERID"); d != nil {
+			args.OwnerId = pulumix.Ptr(d.(string))
+		}
+	}
 	if args.AccessToken != nil {
 		untypedSecretValue := pulumi.ToSecret(args.AccessToken.ToOutput(ctx.Context()).Untyped())
 		args.AccessToken = pulumix.MustConvertTyped[*string](untypedSecretValue)

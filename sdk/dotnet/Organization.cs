@@ -6,8 +6,9 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Threading.Tasks;
 using Pulumi.Serialization;
+using Pulumi;
 
-namespace Pulumi.Gitpod
+namespace PiersKarsenbarg.Gitpod
 {
     /// <summary>
     /// A Gitpod Organization
@@ -56,6 +57,7 @@ namespace Pulumi.Gitpod
             var defaultOptions = new CustomResourceOptions
             {
                 Version = Utilities.Version,
+                PluginDownloadURL = "github://api.github.com/pierskarsenbarg/pulumi-gitpod",
             };
             var merged = CustomResourceOptions.Merge(defaultOptions, options);
             // Override the ID if one was specified for consistency with other language SDKs.

@@ -61,7 +61,7 @@ function getVersion() {
 exports.getVersion = getVersion;
 /** @internal */
 function resourceOptsDefaults() {
-    return { version: getVersion() };
+    return { version: getVersion(), pluginDownloadURL: "github://api.github.com/pierskarsenbarg/pulumi-gitpod" };
 }
 exports.resourceOptsDefaults = resourceOptsDefaults;
 /** @internal */

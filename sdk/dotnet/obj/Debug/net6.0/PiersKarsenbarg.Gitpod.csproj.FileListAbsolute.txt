@@ -1,0 +1,15 @@
+/Users/pierskarsenbarg/go/src/github.com/pierskarsenbarg/pulumi-gitpod/sdk/dotnet/bin/Debug/net6.0/PiersKarsenbarg.Gitpod.deps.json
+/Users/pierskarsenbarg/go/src/github.com/pierskarsenbarg/pulumi-gitpod/sdk/dotnet/bin/Debug/net6.0/PiersKarsenbarg.Gitpod.dll
+/Users/pierskarsenbarg/go/src/github.com/pierskarsenbarg/pulumi-gitpod/sdk/dotnet/bin/Debug/net6.0/PiersKarsenbarg.Gitpod.pdb
+/Users/pierskarsenbarg/go/src/github.com/pierskarsenbarg/pulumi-gitpod/sdk/dotnet/bin/Debug/net6.0/PiersKarsenbarg.Gitpod.xml
+/Users/pierskarsenbarg/go/src/github.com/pierskarsenbarg/pulumi-gitpod/sdk/dotnet/obj/Debug/net6.0/PiersKarsenbarg.Gitpod.csproj.AssemblyReference.cache
+/Users/pierskarsenbarg/go/src/github.com/pierskarsenbarg/pulumi-gitpod/sdk/dotnet/obj/Debug/net6.0/PiersKarsenbarg.Gitpod.GeneratedMSBuildEditorConfig.editorconfig
+/Users/pierskarsenbarg/go/src/github.com/pierskarsenbarg/pulumi-gitpod/sdk/dotnet/obj/Debug/net6.0/PiersKarsenbarg.Gitpod.AssemblyInfoInputs.cache
+/Users/pierskarsenbarg/go/src/github.com/pierskarsenbarg/pulumi-gitpod/sdk/dotnet/obj/Debug/net6.0/PiersKarsenbarg.Gitpod.AssemblyInfo.cs
+/Users/pierskarsenbarg/go/src/github.com/pierskarsenbarg/pulumi-gitpod/sdk/dotnet/obj/Debug/net6.0/PiersKarsenbarg.Gitpod.csproj.CoreCompileInputs.cache
+/Users/pierskarsenbarg/go/src/github.com/pierskarsenbarg/pulumi-gitpod/sdk/dotnet/obj/Debug/net6.0/PiersKarsenbarg.Gitpod.sourcelink.json
+/Users/pierskarsenbarg/go/src/github.com/pierskarsenbarg/pulumi-gitpod/sdk/dotnet/obj/Debug/net6.0/PiersKarsenbarg.Gitpod.dll
+/Users/pierskarsenbarg/go/src/github.com/pierskarsenbarg/pulumi-gitpod/sdk/dotnet/obj/Debug/net6.0/refint/PiersKarsenbarg.Gitpod.dll
+/Users/pierskarsenbarg/go/src/github.com/pierskarsenbarg/pulumi-gitpod/sdk/dotnet/obj/Debug/net6.0/PiersKarsenbarg.Gitpod.xml
+/Users/pierskarsenbarg/go/src/github.com/pierskarsenbarg/pulumi-gitpod/sdk/dotnet/obj/Debug/net6.0/PiersKarsenbarg.Gitpod.pdb
+/Users/pierskarsenbarg/go/src/github.com/pierskarsenbarg/pulumi-gitpod/sdk/dotnet/obj/Debug/net6.0/ref/PiersKarsenbarg.Gitpod.dll

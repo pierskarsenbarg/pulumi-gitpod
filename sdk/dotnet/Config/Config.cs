@@ -4,7 +4,7 @@
 using System;
 using System.Collections.Immutable;
 
-namespace Pulumi.Gitpod
+namespace PiersKarsenbarg.Gitpod
 {
     public static class Config
     {
@@ -42,14 +42,14 @@ namespace Pulumi.Gitpod
             set => _accessToken.Set(value);
         }
 
-        private static readonly __Value<string?> _organizationId = new __Value<string?>(() => __config.Get("organizationId"));
+        private static readonly __Value<string?> _organizationId = new __Value<string?>(() => __config.Get("organizationId") ?? Utilities.GetEnv("GITPOD_ORGANISATIONID") ?? "");
         public static string? OrganizationId
         {
             get => _organizationId.Get();
             set => _organizationId.Set(value);
         }
 
-        private static readonly __Value<string?> _ownerId = new __Value<string?>(() => __config.Get("ownerId"));
+        private static readonly __Value<string?> _ownerId = new __Value<string?>(() => __config.Get("ownerId") ?? Utilities.GetEnv("GITPOD_OWNERID") ?? "");
         /// <summary>
         /// Id of owner account
         /// </summary>

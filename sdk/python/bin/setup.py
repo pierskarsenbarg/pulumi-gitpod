@@ -9,7 +9,7 @@ from setuptools.command.install import install
 from subprocess import check_call
 
 
-VERSION = "0.0.1a1709591095+dirty"
+VERSION = "0.0.1a1710714351+dirty"
 def readme():
     try:
         with open('README.md', encoding='utf-8') as f:
@@ -18,7 +18,7 @@ def readme():
         return "gitpod Pulumi Package - Development Version"
 
 
-setup(name='pulumi_gitpod',
+setup(name='pierskarsenbarg_pulumi_gitpod',
       python_requires='>=3.8',
       version=VERSION,
       description="Gitpod provider",
@@ -26,14 +26,14 @@ setup(name='pulumi_gitpod',
       long_description_content_type='text/markdown',
       packages=find_packages(),
       package_data={
-          'pulumi_gitpod': [
+          'pierskarsenbarg_pulumi_gitpod': [
               'py.typed',
               'pulumi-plugin.json',
           ]
       },
       install_requires=[
           'parver>=0.2.1',
-          'pulumi',
+          'pulumi>=3.0.0,<4.0.0',
           'semver>=2.8.1'
       ],
       zip_safe=False)

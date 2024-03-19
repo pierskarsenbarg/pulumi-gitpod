@@ -14,13 +14,15 @@ Object.defineProperty(exports, "accessToken", {
 });
 Object.defineProperty(exports, "organizationId", {
     get() {
-        return __config.get("organizationId");
+        var _a;
+        return (_a = __config.get("organizationId")) !== null && _a !== void 0 ? _a : (utilities.getEnv("GITPOD_ORGANISATIONID") || "");
     },
     enumerable: true,
 });
 Object.defineProperty(exports, "ownerId", {
     get() {
-        return __config.get("ownerId");
+        var _a;
+        return (_a = __config.get("ownerId")) !== null && _a !== void 0 ? _a : (utilities.getEnv("GITPOD_OWNERID") || "");
     },
     enumerable: true,
 });
