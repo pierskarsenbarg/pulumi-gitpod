@@ -44,7 +44,7 @@ tasks:
       - pulumi package gen-sdk ./bin/{{.PROVIDER}} --language nodejs
       - | 
         cd {{.SDK_DIR}}/nodejs/ && \
-          yarn install && \
+          bun install --yarn && \
           yarn run tsc && \
           cp ../../README.md ../../LICENSE package.json yarn.lock bin/ && \
           sed -i.bak 's/${{.NODEJS_VERSION}}/{{.NODEJS_VERSION}}/g' bin/package.json && \
