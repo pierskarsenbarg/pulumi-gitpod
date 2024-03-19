@@ -13,23 +13,32 @@ tasks:
   clean:
     cmds:
       - rm -rf ./bin
+      - rm -rf .task
+      - rm -f schema.json
   ensure:
     cmds:
       - go mod tidy
       - cd sdk && go mod tidy
       # - cd tests && go mod tidy
   build_provider:
+    deps: [ensure]
+    sources:
+      - '*.go'
+      - 'internal/**/*.go'
+      - 'pkg/**/*.go'
+      - 'go.*'
+    generates:
+      - bin/pulumi-resource-{{.PROVIDER_NAME}}
     cmds:
-      - go mod tidy
       - go build -o bin/{{.PROVIDER}} -ldflags "-X {{.PROJECT}}/{{.VERSION_PATH}}={{.VERSION}}"
   get_schema:
     deps: [build_provider]
     cmds:
       - rm -f schema.json
       - pulumi package get-schema ./bin/{{.PROVIDER}} >> schema.json
-  dotnet_sdk:
+  generate_dotnet_sdk:
     cmds: 
-      - rm -rf sdk/dotnet
+      - rm -rf {{.SDK_DIR}}/dotnet
       - pulumi package gen-sdk ./bin/{{.PROVIDER}} --language dotnet
       - |
         cd {{.SDK_DIR}}/dotnet/ && \
@@ -38,9 +47,9 @@ tasks:
     vars:
       DOTNET_VERSION: 
         sh: pulumictl get version --language dotnet
-  nodejs_sdk:
+  generate_nodejs_sdk:
     cmds: 
-      - rm -rf sdk/nodejs
+      - rm -rf {{.SDK_DIR}}/nodejs
       - pulumi package gen-sdk ./bin/{{.PROVIDER}} --language nodejs
       - | 
         cd {{.SDK_DIR}}/nodejs/ && \
@@ -52,11 +61,11 @@ tasks:
     vars:
       NODEJS_VERSION:
         sh: pulumictl get version --language javascript
-  go_sdk:
+  generate_go_sdk:
     cmds: 
-      - rm -rf sdk/go
+      - rm -rf {{.SDK_DIR}}/go
       - pulumi package gen-sdk ./bin/{{.PROVIDER}} --language go
-  python_sdk:
+  generate_python_sdk:
     cmds:
       - rm -rf {{.SDK_DIR}}/python
       - pulumi package gen-sdk ./bin/{{.PROVIDER}} --language python
@@ -71,7 +80,7 @@ tasks:
     vars:
       PYTHON_VERSION: 
         sh: pulumictl get version --language python
-  build_sdks:
+  generate_sdks:
     deps: [build_provider]
     cmds:
       - task: nodejs_sdk
