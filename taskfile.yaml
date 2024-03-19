@@ -83,10 +83,10 @@ tasks:
   generate_sdks:
     deps: [build_provider]
     cmds:
-      - task: nodejs_sdk
-      - task: dotnet_sdk
-      - task: go_sdk
-      - task: python_sdk
+      - task: generate_nodejs_sdk
+      - task: generate_dotnet_sdk
+      - task: generate_go_sdk
+      - task: generate_python_sdk
   watch:
     watch: true
     sources:
