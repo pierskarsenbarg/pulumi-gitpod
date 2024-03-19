@@ -6,12 +6,17 @@
     <members>
         <member name="P:PiersKarsenbarg.Gitpod.Config.AccessToken">
             <summary>
-            Your Gitpod access token
+            Your Gitpod access token. You can create these in your user settings: https://gitpod.io/user/tokens
+            </summary>
+        </member>
+        <member name="P:PiersKarsenbarg.Gitpod.Config.OrganizationId">
+            <summary>
+            Id of the organisation who is going to own the workspaces. You can find this on the organisation settings page of the currently selected organisation: https://gitpod.io/settings
             </summary>
         </member>
         <member name="P:PiersKarsenbarg.Gitpod.Config.OwnerId">
             <summary>
-            Id of owner account
+            Id of owner account. This can be found on your user account page: https://gitpod.io/user/account
             </summary>
         </member>
         <member name="P:PiersKarsenbarg.Gitpod.EditorName.Code">
@@ -230,12 +235,17 @@
         </member>
         <member name="P:PiersKarsenbarg.Gitpod.Provider.AccessToken">
             <summary>
-            Your Gitpod access token
+            Your Gitpod access token. You can create these in your user settings: https://gitpod.io/user/tokens
+            </summary>
+        </member>
+        <member name="P:PiersKarsenbarg.Gitpod.Provider.OrganizationId">
+            <summary>
+            Id of the organisation who is going to own the workspaces. You can find this on the organisation settings page of the currently selected organisation: https://gitpod.io/settings
             </summary>
         </member>
         <member name="P:PiersKarsenbarg.Gitpod.Provider.OwnerId">
             <summary>
-            Id of owner account
+            Id of owner account. This can be found on your user account page: https://gitpod.io/user/account
             </summary>
         </member>
         <member name="M:PiersKarsenbarg.Gitpod.Provider.#ctor(System.String,PiersKarsenbarg.Gitpod.ProviderArgs,Pulumi.CustomResourceOptions)">
@@ -249,12 +259,17 @@
         </member>
         <member name="P:PiersKarsenbarg.Gitpod.ProviderArgs.AccessToken">
             <summary>
-            Your Gitpod access token
+            Your Gitpod access token. You can create these in your user settings: https://gitpod.io/user/tokens
+            </summary>
+        </member>
+        <member name="P:PiersKarsenbarg.Gitpod.ProviderArgs.OrganizationId">
+            <summary>
+            Id of the organisation who is going to own the workspaces. You can find this on the organisation settings page of the currently selected organisation: https://gitpod.io/settings
             </summary>
         </member>
         <member name="P:PiersKarsenbarg.Gitpod.ProviderArgs.OwnerId">
             <summary>
-            Id of owner account
+            Id of owner account. This can be found on your user account page: https://gitpod.io/user/account
             </summary>
         </member>
         <member name="T:PiersKarsenbarg.Gitpod.Workspace">

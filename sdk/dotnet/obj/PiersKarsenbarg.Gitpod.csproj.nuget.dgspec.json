@@ -5,7 +5,7 @@
   },
   "projects": {
     "/Users/pierskarsenbarg/go/src/github.com/pierskarsenbarg/pulumi-gitpod/sdk/dotnet/PiersKarsenbarg.Gitpod.csproj": {
-      "version": "0.0.1-alpha.1710844478+85b1f515.dirty",
+      "version": "0.0.1-alpha.1710847802+25a2aec6.dirty",
       "restore": {
         "projectUniqueName": "/Users/pierskarsenbarg/go/src/github.com/pierskarsenbarg/pulumi-gitpod/sdk/dotnet/PiersKarsenbarg.Gitpod.csproj",
         "projectName": "PiersKarsenbarg.Gitpod",

@@ -19,8 +19,9 @@ class ProviderArgs:
                  owner_id: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a Provider resource.
-        :param pulumi.Input[str] access_token: Your Gitpod access token
-        :param pulumi.Input[str] owner_id: Id of owner account
+        :param pulumi.Input[str] access_token: Your Gitpod access token. You can create these in your user settings: https://gitpod.io/user/tokens
+        :param pulumi.Input[str] organization_id: Id of the organisation who is going to own the workspaces. You can find this on the organisation settings page of the currently selected organisation: https://gitpod.io/settings
+        :param pulumi.Input[str] owner_id: Id of owner account. This can be found on your user account page: https://gitpod.io/user/account
         """
         if access_token is None:
             access_token = (_utilities.get_env('GITPOD_ACCESSTOKEN') or '')
@@ -39,7 +40,7 @@ class ProviderArgs:
     @pulumi.getter(name="accessToken")
     def access_token(self) -> Optional[pulumi.Input[str]]:
         """
-        Your Gitpod access token
+        Your Gitpod access token. You can create these in your user settings: https://gitpod.io/user/tokens
         """
         return pulumi.get(self, "access_token")
 
@@ -50,6 +51,9 @@ class ProviderArgs:
     @property
     @pulumi.getter(name="organizationId")
     def organization_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        Id of the organisation who is going to own the workspaces. You can find this on the organisation settings page of the currently selected organisation: https://gitpod.io/settings
+        """
         return pulumi.get(self, "organization_id")
 
     @organization_id.setter
@@ -60,7 +64,7 @@ class ProviderArgs:
     @pulumi.getter(name="ownerId")
     def owner_id(self) -> Optional[pulumi.Input[str]]:
         """
-        Id of owner account
+        Id of owner account. This can be found on your user account page: https://gitpod.io/user/account
         """
         return pulumi.get(self, "owner_id")
 
@@ -82,8 +86,9 @@ class Provider(pulumi.ProviderResource):
         Create a Gitpod resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] access_token: Your Gitpod access token
-        :param pulumi.Input[str] owner_id: Id of owner account
+        :param pulumi.Input[str] access_token: Your Gitpod access token. You can create these in your user settings: https://gitpod.io/user/tokens
+        :param pulumi.Input[str] organization_id: Id of the organisation who is going to own the workspaces. You can find this on the organisation settings page of the currently selected organisation: https://gitpod.io/settings
+        :param pulumi.Input[str] owner_id: Id of owner account. This can be found on your user account page: https://gitpod.io/user/account
         """
         ...
     @overload
@@ -141,20 +146,23 @@ class Provider(pulumi.ProviderResource):
     @pulumi.getter(name="accessToken")
     def access_token(self) -> pulumi.Output[Optional[str]]:
         """
-        Your Gitpod access token
+        Your Gitpod access token. You can create these in your user settings: https://gitpod.io/user/tokens
         """
         return pulumi.get(self, "access_token")
 
     @property
     @pulumi.getter(name="organizationId")
     def organization_id(self) -> pulumi.Output[Optional[str]]:
+        """
+        Id of the organisation who is going to own the workspaces. You can find this on the organisation settings page of the currently selected organisation: https://gitpod.io/settings
+        """
         return pulumi.get(self, "organization_id")
 
     @property
     @pulumi.getter(name="ownerId")
     def owner_id(self) -> pulumi.Output[Optional[str]]:
         """
-        Id of owner account
+        Id of owner account. This can be found on your user account page: https://gitpod.io/user/account
         """
         return pulumi.get(self, "owner_id")
 

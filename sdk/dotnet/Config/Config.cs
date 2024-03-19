@@ -34,7 +34,7 @@ namespace PiersKarsenbarg.Gitpod
 
         private static readonly __Value<string?> _accessToken = new __Value<string?>(() => __config.Get("accessToken") ?? Utilities.GetEnv("GITPOD_ACCESSTOKEN") ?? "");
         /// <summary>
-        /// Your Gitpod access token
+        /// Your Gitpod access token. You can create these in your user settings: https://gitpod.io/user/tokens
         /// </summary>
         public static string? AccessToken
         {
@@ -43,6 +43,9 @@ namespace PiersKarsenbarg.Gitpod
         }
 
         private static readonly __Value<string?> _organizationId = new __Value<string?>(() => __config.Get("organizationId") ?? Utilities.GetEnv("GITPOD_ORGANISATIONID") ?? "");
+        /// <summary>
+        /// Id of the organisation who is going to own the workspaces. You can find this on the organisation settings page of the currently selected organisation: https://gitpod.io/settings
+        /// </summary>
         public static string? OrganizationId
         {
             get => _organizationId.Get();
@@ -51,7 +54,7 @@ namespace PiersKarsenbarg.Gitpod
 
         private static readonly __Value<string?> _ownerId = new __Value<string?>(() => __config.Get("ownerId") ?? Utilities.GetEnv("GITPOD_OWNERID") ?? "");
         /// <summary>
-        /// Id of owner account
+        /// Id of owner account. This can be found on your user account page: https://gitpod.io/user/account
         /// </summary>
         public static string? OwnerId
         {

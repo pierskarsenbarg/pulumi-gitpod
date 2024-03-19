@@ -18,18 +18,21 @@ class _ExportableConfig(types.ModuleType):
     @property
     def access_token(self) -> str:
         """
-        Your Gitpod access token
+        Your Gitpod access token. You can create these in your user settings: https://gitpod.io/user/tokens
         """
         return __config__.get('accessToken') or (_utilities.get_env('GITPOD_ACCESSTOKEN') or '')
 
     @property
     def organization_id(self) -> str:
+        """
+        Id of the organisation who is going to own the workspaces. You can find this on the organisation settings page of the currently selected organisation: https://gitpod.io/settings
+        """
         return __config__.get('organizationId') or (_utilities.get_env('GITPOD_ORGANISATIONID') or '')
 
     @property
     def owner_id(self) -> str:
         """
-        Id of owner account
+        Id of owner account. This can be found on your user account page: https://gitpod.io/user/account
         """
         return __config__.get('ownerId') or (_utilities.get_env('GITPOD_OWNERID') or '')
 

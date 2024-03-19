@@ -19,8 +19,9 @@ type Config struct {
 var _ = (infer.Annotated)((*Config)(nil))
 
 func (c *Config) Annotate(a infer.Annotator) {
-	a.Describe(&c.AccessToken, "Your Gitpod access token")
-	a.Describe(&c.OwnerId, "Id of owner account")
+	a.Describe(&c.AccessToken, "Your Gitpod access token. You can create these in your user settings: https://gitpod.io/user/tokens")
+	a.Describe(&c.OwnerId, "Id of owner account. This can be found on your user account page: https://gitpod.io/user/account")
+	a.Describe(&c.OrganizationId, "Id of the organisation who is going to own the workspaces. You can find this on the organisation settings page of the currently selected organisation: https://gitpod.io/settings")
 	a.SetDefault(&c.AccessToken, "", "GITPOD_ACCESSTOKEN")
 	a.SetDefault(&c.OrganizationId, "", "GITPOD_ORGANISATIONID")
 	a.SetDefault(&c.OwnerId, "", "GITPOD_OWNERID")

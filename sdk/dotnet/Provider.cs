@@ -14,16 +14,19 @@ namespace PiersKarsenbarg.Gitpod
     public partial class Provider : global::Pulumi.ProviderResource
     {
         /// <summary>
-        /// Your Gitpod access token
+        /// Your Gitpod access token. You can create these in your user settings: https://gitpod.io/user/tokens
         /// </summary>
         [Output("accessToken")]
         public Output<string?> AccessToken { get; private set; } = null!;
 
+        /// <summary>
+        /// Id of the organisation who is going to own the workspaces. You can find this on the organisation settings page of the currently selected organisation: https://gitpod.io/settings
+        /// </summary>
         [Output("organizationId")]
         public Output<string?> OrganizationId { get; private set; } = null!;
 
         /// <summary>
-        /// Id of owner account
+        /// Id of owner account. This can be found on your user account page: https://gitpod.io/user/account
         /// </summary>
         [Output("ownerId")]
         public Output<string?> OwnerId { get; private set; } = null!;
@@ -65,7 +68,7 @@ namespace PiersKarsenbarg.Gitpod
         private Input<string>? _accessToken;
 
         /// <summary>
-        /// Your Gitpod access token
+        /// Your Gitpod access token. You can create these in your user settings: https://gitpod.io/user/tokens
         /// </summary>
         public Input<string>? AccessToken
         {
@@ -77,11 +80,14 @@ namespace PiersKarsenbarg.Gitpod
             }
         }
 
+        /// <summary>
+        /// Id of the organisation who is going to own the workspaces. You can find this on the organisation settings page of the currently selected organisation: https://gitpod.io/settings
+        /// </summary>
         [Input("organizationId")]
         public Input<string>? OrganizationId { get; set; }
 
         /// <summary>
-        /// Id of owner account
+        /// Id of owner account. This can be found on your user account page: https://gitpod.io/user/account
         /// </summary>
         [Input("ownerId")]
         public Input<string>? OwnerId { get; set; }

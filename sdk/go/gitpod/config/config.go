@@ -11,7 +11,7 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
-// Your Gitpod access token
+// Your Gitpod access token. You can create these in your user settings: https://gitpod.io/user/tokens
 func GetAccessToken(ctx *pulumi.Context) string {
 	v, err := config.Try(ctx, "gitpod:accessToken")
 	if err == nil {
@@ -23,6 +23,8 @@ func GetAccessToken(ctx *pulumi.Context) string {
 	}
 	return value
 }
+
+// Id of the organisation who is going to own the workspaces. You can find this on the organisation settings page of the currently selected organisation: https://gitpod.io/settings
 func GetOrganizationId(ctx *pulumi.Context) string {
 	v, err := config.Try(ctx, "gitpod:organizationId")
 	if err == nil {
@@ -35,7 +37,7 @@ func GetOrganizationId(ctx *pulumi.Context) string {
 	return value
 }
 
-// Id of owner account
+// Id of owner account. This can be found on your user account page: https://gitpod.io/user/account
 func GetOwnerId(ctx *pulumi.Context) string {
 	v, err := config.Try(ctx, "gitpod:ownerId")
 	if err == nil {
