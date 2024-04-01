@@ -19,4 +19,5 @@ pierskarsenbarg_pulumi_gitpod.egg-info/not-zip-safe
 pierskarsenbarg_pulumi_gitpod.egg-info/requires.txt
 pierskarsenbarg_pulumi_gitpod.egg-info/top_level.txt
 pierskarsenbarg_pulumi_gitpod/config/__init__.py
+pierskarsenbarg_pulumi_gitpod/config/__init__.pyi
 pierskarsenbarg_pulumi_gitpod/config/vars.py
