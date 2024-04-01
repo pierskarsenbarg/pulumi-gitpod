@@ -6,7 +6,7 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v6.0": {
-      "PiersKarsenbarg.Gitpod/0.0.1-alpha.1710847802+25a2aec6.dirty": {
+      "PiersKarsenbarg.Gitpod/0.0.1-alpha.1710889858+d322efdd.dirty": {
         "dependencies": {
           "Microsoft.SourceLink.GitHub": "1.0.0",
           "Pulumi": "3.60.0"
@@ -206,7 +206,7 @@
     }
   },
   "libraries": {
-    "PiersKarsenbarg.Gitpod/0.0.1-alpha.1710847802+25a2aec6.dirty": {
+    "PiersKarsenbarg.Gitpod/0.0.1-alpha.1710889858+d322efdd.dirty": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

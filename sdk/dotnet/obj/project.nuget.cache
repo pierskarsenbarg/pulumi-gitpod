@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "99Uj7WPLYqg7wb3bJbbQqF13uadkMYy7saJChN65IDY3WAbRKp+Il7fT+pKwRXKqUM20Df4n8BKqoLSubWbSww==",
+  "dgSpecHash": "/8AsuqIowIQ9DyU/CmeO8xj7H6nx7/Zj1q2Ja8Pn2+tZAAYVYM0bS3Glc3oEEnVZgul6h8809bExIU5ahEY6gw==",
   "success": true,
   "projectFilePath": "/Users/pierskarsenbarg/go/src/github.com/pierskarsenbarg/pulumi-gitpod/sdk/dotnet/PiersKarsenbarg.Gitpod.csproj",
   "expectedPackageFiles": [
@@ -29,7 +29,9 @@
     "/Users/pierskarsenbarg/.nuget/packages/serilog.sinks.console/4.0.1/serilog.sinks.console.4.0.1.nupkg.sha512",
     "/Users/pierskarsenbarg/.nuget/packages/system.memory/4.5.3/system.memory.4.5.3.nupkg.sha512",
     "/Users/pierskarsenbarg/.nuget/packages/system.reflection.metadata/5.0.0/system.reflection.metadata.5.0.0.nupkg.sha512",
-    "/Users/pierskarsenbarg/.nuget/packages/system.runtime.compilerservices.unsafe/4.4.0/system.runtime.compilerservices.unsafe.4.4.0.nupkg.sha512"
+    "/Users/pierskarsenbarg/.nuget/packages/system.runtime.compilerservices.unsafe/4.4.0/system.runtime.compilerservices.unsafe.4.4.0.nupkg.sha512",
+    "/Users/pierskarsenbarg/.nuget/packages/microsoft.netcore.app.ref/6.0.26/microsoft.netcore.app.ref.6.0.26.nupkg.sha512",
+    "/Users/pierskarsenbarg/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.26/microsoft.aspnetcore.app.ref.6.0.26.nupkg.sha512"
   ],
   "logs": []
 }

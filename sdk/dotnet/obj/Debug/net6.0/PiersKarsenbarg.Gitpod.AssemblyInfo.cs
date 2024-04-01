@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyDescriptionAttribute("Gitpod provider")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("0.0.1.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("0.0.1-alpha.1710847802+25a2aec6.dirty.25a2aec6512c345b45df3cc25b419fea1e2d8bad")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("0.0.1-alpha.1710889858+d322efdd.dirty.d322efddfd1e1cb90b0d7b7d14fc18a60c7685af")]
 [assembly: System.Reflection.AssemblyProductAttribute("PiersKarsenbarg.Gitpod")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PiersKarsenbarg.Gitpod")]
 [assembly: System.Reflection.AssemblyVersionAttribute("0.0.1.0")]
