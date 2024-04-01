@@ -2,11 +2,11 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
   <metadata>
     <id>PiersKarsenbarg.Gitpod</id>
-    <version>0.0.1-alpha.1710847802+25a2aec6.dirty</version>
+    <version>0.0.1-alpha.1711959574+abb9604a.dirty</version>
     <authors>Piers Karsenbarg</authors>
     <icon>logo.png</icon>
     <description>Gitpod provider</description>
-    <repository type="git" url="https://github.com/pierskarsenbarg/pulumi-gitpod.git" commit="25a2aec6512c345b45df3cc25b419fea1e2d8bad" />
+    <repository type="git" url="https://github.com/pierskarsenbarg/pulumi-gitpod.git" commit="abb9604afdb4596c4d34f5b41a688f26064fa024" />
     <dependencies>
       <group targetFramework="net6.0">
         <dependency id="Pulumi" version="3.60.0" exclude="Build,Analyzers" />
